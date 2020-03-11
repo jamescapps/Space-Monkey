@@ -75,8 +75,8 @@ def shooting_star():
     while x < 700 and y < 700:
         screen.blit(background_image, [0, 0])
         pygame.display.flip()
-        x += .35
-        y -= .35
+        x += .75
+        y -= .75
         screen.blit(star, (x, y))
         pygame.display.update()
         pygame.display.flip()
@@ -201,6 +201,33 @@ def pre_asteroids_monkey_and_commander():
         pygame.display.update()
         pygame.display.flip()
         screen.blit(commander, [50, 40])
+
+        font = pygame.font.SysFont('monospace', 15)
+        text = font.render(' You are approaching the asteroid belt?', True, white, black)
+        text_rect = text.get_rect()
+        text_rect.center = (500, 150)
+        screen.blit(text, text_rect)
+        pygame.display.update()
+
+        font = pygame.font.SysFont('monospace', 15)
+        text1 = font.render(' Do you remember the prime directive?', True, white, black)
+        text_rect1 = text.get_rect()
+        text_rect1.center = (500, 200)
+        screen.blit(text1, text_rect1)
+        pygame.display.update()
+        break
+
+    #  Need to have user answer display where space monkey's text is and update Commanders based on input.
+    user_answer = input('You can respond however you like to the Commander...')
+
+    if user_answer.lower() == 'no':
+        print('The prime directive means you are not allowed to use your weapons on any of these asteroids.'
+              'The Fleet will not be responsible for rogue shards destroying other planets!  Can you agree to this?')
+    elif user_answer.lower() == 'yes':
+        print('Good.  I always knew you were sharp.  Once you get through this asteroid belt I will be in touch '
+              'with new instructions.')
+    else:
+        print('Look we should focus on the task at hand...')
 
 
 def main():
