@@ -1,6 +1,6 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue
-from asteroid_choices_2 import good_luck, whats_the_problem
+from asteroid_choices_2 import good_luck, whats_the_problem, nonsense, bananas, the_party
 
 
 def say_no_1():
@@ -22,6 +22,7 @@ def say_no_1():
         dialogue(' (2) Yes ', 243, 625, 15)
         dialogue('                          ', 243, 650, 15)
 
+        # Underline selection before running next function.
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_1:
@@ -43,7 +44,7 @@ def say_no_1():
                     # Commander
                     update_and_flip()
                     good_luck()
-                    # Run function to start to enter asteroid field.
+                    # Run function to enter asteroid field.
 
 
 def say_yes_1():
@@ -103,6 +104,7 @@ def say_more_choices_1():
                     dialogue(' (1) The Prime Directive is nonsense.                   ', 246, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(2000)
+                    nonsense()
 
             if event.key == pygame.K_2:
                 while True:
@@ -110,6 +112,7 @@ def say_more_choices_1():
                     dialogue(' (2) You lied about there being bananas in the capsule! ', 246, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(2000)
+                    bananas()
 
             if event.key == pygame.K_3:
                 while True:
@@ -117,3 +120,4 @@ def say_more_choices_1():
                     dialogue(' (3) We should talk about what happened at the party... ', 246, 650, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(2000)
+                    the_party()

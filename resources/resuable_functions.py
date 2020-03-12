@@ -20,3 +20,15 @@ def dialogue(words, x, y, font_size, underline=False):
     text_rect.center = (x, y)
     screen.blit(text, text_rect)
     pygame.display.update()
+
+
+def good_luck():
+    dialogue('  Great! Get to it!                                       '
+             , 510, 100, 15)
+    dialogue('  Good luck out there Space Monkey!                       '
+             , 510, 150, 15)
+    dialogue('                                                          '
+             , 520, 200, 15)
+    dialogue('                                                          '
+             , 520, 250, 15)
+    pygame.time.delay(2000)
