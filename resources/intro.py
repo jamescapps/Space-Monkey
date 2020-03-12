@@ -1,4 +1,5 @@
 import pygame
+from resuable_functions import update_and_flip
 
 pygame.init()
 
@@ -55,8 +56,7 @@ def title_screen():
         screen.blit(side_small_rocket, (550, 700))
         pygame.display.update()
         screen.blit(replace_command_text, replace_command_text_rect)
-        pygame.display.update()
-        pygame.display.flip()
+        update_and_flip()
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
@@ -74,8 +74,7 @@ def shooting_star():
         x += .75
         y -= .75
         screen.blit(star, (x, y))
-        pygame.display.update()
-        pygame.display.flip()
+        update_and_flip()
         screen.fill(black)
 
 
@@ -95,8 +94,7 @@ def rocket_launch():
         pygame.display.flip()
         # screen.blit(exhaust, (exhaust_x, exhaust_y))
         # Need better exhaust or smoke.
-        pygame.display.update()
-        pygame.display.flip()
+        update_and_flip()
         screen.fill(black)
 
 
@@ -120,8 +118,7 @@ def flying_through_space_1():
         screen.blit(side_rocket, (x, y))
         pygame.display.flip()
         screen.blit(side_exhaust, (exhaust_x, exhaust_y))
-        pygame.display.update()
-        pygame.display.flip()
+        update_and_flip()
         screen.fill(black)
 
 
@@ -146,6 +143,5 @@ def flying_through_space_2():
         screen.blit(side_rocket, (x, y))
         pygame.display.flip()
         screen.blit(side_exhaust, (exhaust_x, exhaust_y))
-        pygame.display.update()
-        pygame.display.flip()
+        update_and_flip()
         screen.fill(black)
