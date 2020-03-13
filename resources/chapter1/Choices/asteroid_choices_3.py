@@ -1,5 +1,5 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue, good_luck
+from resuable_functions import update_and_flip, dialogue, good_luck, convinced
 
 
 def explain_logically():
@@ -7,13 +7,19 @@ def explain_logically():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' Look sir, I understand you are my superior... but....    ', 246, 600, 15)
-        dialogue(' The longer it takes me to get through this asteroid field', 246, 625, 15)
-        dialogue(' The longer it takes me to complete my mission....        ', 246, 650, 15)
-        pygame.time.delay(5000)
-        # Run convinced function
+        dialogue(' Look sir, I understand you are my superior...         ', 246, 600, 15)
+        dialogue(' But the longer it takes me to get through this        ', 246, 625, 15)
+        dialogue(' asteroid field, the longer it takes me to complete    ', 246, 650, 15)
+        dialogue(' my mission....                                        ', 246, 675, 15)
+        dialogue('                    (enter)                            ', 246, 700, 12)
 
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            convinced()
+            if event.key == pygame.K_1:
+                convinced()
 
+                
 def insult():
     # Have to start new loop to get rid of underline.
     while True:
@@ -75,7 +81,7 @@ def press_him():
                 while True:
                     update_and_flip()
                     dialogue(' (2) I want to know who is responsible and what we are  ',  246, 625, 15, underline=True)
-                    dialogue('     going to do about this!                            ', 246, 625, 15, underline=True)
+                    dialogue('     going to do about this!                            ', 246, 650, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(2000)
                     # Run responsible()

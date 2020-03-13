@@ -39,6 +39,7 @@ def nonsense():
                     update_and_flip()
                     dialogue(' (1) Explain logically                                  ', 246, 600, 15, underline=True)
                     pygame.display.flip()
+                    pygame.time.delay(2000)
                     explain_logically()
 
             if event.key == pygame.K_2:

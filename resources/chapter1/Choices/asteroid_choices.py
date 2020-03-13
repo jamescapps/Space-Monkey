@@ -1,9 +1,14 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue
 from asteroid_choices_2 import good_luck, whats_the_problem, nonsense, bananas, the_party
+from pre_asteroid import monkey_and_commander_convo
+
+back_counter = 0
 
 
 def say_no_1():
+    global back_counter
+    back_counter = 1
     # Commander
     update_and_flip()
     dialogue(' The Prime Directive states that you are not allowed'
@@ -32,6 +37,7 @@ def say_no_1():
                     pygame.display.flip()
                     pygame.time.delay(2000)
                     whats_the_problem()
+                    back_counter = 2
                     say_more_choices_1()
 
             if event.key == pygame.K_2:
@@ -48,6 +54,8 @@ def say_no_1():
 
 
 def say_yes_1():
+    global back_counter
+    back_counter = 2
     # Commander
     update_and_flip()
     dialogue(' You are one sharp monkey. That is why we selected '
@@ -94,6 +102,7 @@ def say_more_choices_1():
         dialogue(' (1) The Prime Directive is nonsense.                   ', 246, 600, 15)
         dialogue(' (2) You lied about there being bananas in the capsule! ', 246, 625, 15)
         dialogue(' (3) We should talk about what happened at the party... ', 246, 650, 15)
+        dialogue(' (4) Back                                               ', 246, 675, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -106,7 +115,7 @@ def say_more_choices_1():
                     pygame.time.delay(2000)
                     nonsense()
 
-            if event.key == pygame.K_2:
+            if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
                     dialogue(' (2) You lied about there being bananas in the capsule! ', 246, 625, 15, underline=True)
@@ -121,3 +130,18 @@ def say_more_choices_1():
                     pygame.display.flip()
                     pygame.time.delay(2000)
                     the_party()
+
+            if event.key == pygame.K_4:
+                while True:
+                    update_and_flip()
+                    dialogue(' (4) Back                                               ', 246, 675, 15, underline=True)
+                    pygame.display.flip()
+                    pygame.time.delay(2000)
+                    dialogue('                                                        ', 246, 675, 15, underline=True)
+                    # Works but need to adjust text rects in certain areas.
+                    if back_counter == 0:
+                        monkey_and_commander_convo()
+                    if back_counter == 1:
+                        say_no_1()
+                    if back_counter == 2:
+                        say_yes_1()

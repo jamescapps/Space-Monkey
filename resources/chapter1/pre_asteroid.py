@@ -17,6 +17,7 @@ def commander_convo():
         update_and_flip()
 
         dialogue(' Space Monkey! Are you there?  Do you read me?... ', 400, 500, 20)
+        dialogue('                    (Enter)                       ', 400, 525, 12)
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
@@ -32,6 +33,7 @@ def monkey_convo():
         update_and_flip()
 
         dialogue(' Loud and clear Commander! ', 420, 500, 20)
+        dialogue('          (enter)          ', 420, 525, 12)
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
@@ -42,6 +44,7 @@ def monkey_convo():
 
 def monkey_and_commander_convo():
     while True:
+        screen.fill(black)
         screen.blit(comms_photo, [500, 500])
         update_and_flip()
         screen.blit(commander, [50, 40])

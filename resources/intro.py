@@ -32,6 +32,7 @@ def title_screen():
     y = 150
 
     title_font = pygame.font.SysFont('monospace', 60)
+    # Add star to each side of title
     title_text = title_font.render('* Space Monkey! *', True, white, blue)
     title_text_rect = title_text.get_rect()
     title_text_rect.center = (x // 2, y // 2)
