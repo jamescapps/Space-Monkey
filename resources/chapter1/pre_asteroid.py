@@ -11,6 +11,8 @@ commander = pygame.image.load('img/commander.png').convert()
 comms_photo = pygame.image.load('img/comms_photo.png').convert()
 
 
+# Need to center commander on screen more.
+#Back still appearing in certain parts.
 def commander_convo():
     while True:
         screen.blit(commander, [300, 200])

@@ -24,6 +24,7 @@ side_exhaust = pygame.transform.rotate(exhaust, -90)
 
 star = pygame.transform.rotate(pygame.image.load('img/working_star.png').convert(), 20)
 stars = pygame.image.load('img/basic_star.png').convert()
+blue_star = pygame.image.load('img/blue_star.png').convert()
 planet = pygame.image.load('img/saturn.png').convert()
 
 
@@ -31,9 +32,8 @@ def title_screen():
     x = 820
     y = 150
 
-    title_font = pygame.font.SysFont('monospace', 60)
-    # Add star to each side of title
-    title_text = title_font.render('* Space Monkey! *', True, white, blue)
+    title_font = pygame.font.SysFont('monospace', 50)
+    title_text = title_font.render('   S p a c e  M o n k e y   ', True, white, blue)
     title_text_rect = title_text.get_rect()
     title_text_rect.center = (x // 2, y // 2)
 
@@ -48,6 +48,10 @@ def title_screen():
 
     while True:
         screen.fill(blue)
+        screen.blit(blue_star, (1, 1))
+        screen.blit(blue_star, (1, 750))
+        screen.blit(blue_star, (750, 1))
+        screen.blit(blue_star, (750, 750))
         screen.blit(title_text, title_text_rect)
         screen.blit(thumbs_up_monkey, [100, 100])
         screen.blit(command_text, command_text_rect)
