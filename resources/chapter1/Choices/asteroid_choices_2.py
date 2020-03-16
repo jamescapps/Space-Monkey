@@ -39,7 +39,7 @@ def nonsense():
                     update_and_flip()
                     dialogue(' (1) Explain logically                                  ', 246, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     explain_logically()
 
             if event.key == pygame.K_2:
@@ -47,7 +47,7 @@ def nonsense():
                     update_and_flip()
                     dialogue(' (2) Insult                                             ', 246, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     insult()
 
             if event.key == pygame.K_3:
@@ -55,8 +55,9 @@ def nonsense():
                     update_and_flip()
                     dialogue(' (3) Forget it...                                       ', 246, 650, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     good_luck()
+                    # Run function to enter asteroid field without weapons.
 
 
 def bananas():
@@ -75,6 +76,7 @@ def bananas():
         dialogue(' (1) Press him                                          ', 246, 600, 15)
         dialogue(' (2) Forget it...                                       ', 246, 625, 15)
         dialogue('                                                        ', 246, 650, 15)
+        dialogue('                                                        ', 246, 675, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -85,7 +87,7 @@ def bananas():
                     dialogue(' (1) Press him                                          ', 246, 600, 15,
                              underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     press_him()
 
             if event.key == pygame.K_2:
@@ -94,8 +96,9 @@ def bananas():
                     dialogue(' (2) Forget it...                                       ', 246, 625, 15,
                              underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     good_luck()
+                    # Run function to enter asteroid field without weapons.
 
 
 def the_party():
@@ -114,6 +117,7 @@ def the_party():
         dialogue(' (1) Keep talking about it.                             ', 246, 600, 15)
         dialogue(' (2) Forget it...                                       ', 246, 625, 15)
         dialogue('                                                        ', 246, 650, 15)
+        dialogue('                                                        ', 246, 675, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -123,7 +127,7 @@ def the_party():
                     update_and_flip()
                     dialogue(' (1) Keep talking about it.                             ', 246, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     talk_about_it()
 
             if event.key == pygame.K_2:
@@ -131,5 +135,6 @@ def the_party():
                     update_and_flip()
                     dialogue(' (2) Forget it...                                       ', 246, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     good_luck()
+                    # Run function to enter asteroid field without weapons.

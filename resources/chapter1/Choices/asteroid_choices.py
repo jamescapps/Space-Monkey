@@ -35,7 +35,7 @@ def say_no_1():
                     update_and_flip()
                     dialogue(' (1) No ', 248, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     whats_the_problem()
                     back_counter = 2
                     say_more_choices_1()
@@ -45,12 +45,12 @@ def say_no_1():
                     update_and_flip()
                     dialogue(' (2) Yes ', 242, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
 
                     # Commander
                     update_and_flip()
                     good_luck()
-                    # Run function to enter asteroid field.
+                    # Run function to enter asteroid field without weapons.
 
 
 def say_yes_1():
@@ -80,7 +80,7 @@ def say_yes_1():
                     update_and_flip()
                     dialogue(' (1) No ', 248, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     whats_the_problem()
                     say_more_choices_1()
 
@@ -89,9 +89,9 @@ def say_yes_1():
                     update_and_flip()
                     dialogue(' (2) Yes ', 242, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     good_luck()
-                    # Run function to start asteroid field.
+                    # Run function to enter asteroid field without weopons.
 
 
 def say_more_choices_1():
@@ -112,15 +112,15 @@ def say_more_choices_1():
                     update_and_flip()
                     dialogue(' (1) The Prime Directive is nonsense.                   ', 246, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     nonsense()
 
-            if event.key == pygame.K_1:
+            if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
                     dialogue(' (2) You lied about there being bananas in the capsule! ', 246, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     bananas()
 
             if event.key == pygame.K_3:
@@ -128,7 +128,7 @@ def say_more_choices_1():
                     update_and_flip()
                     dialogue(' (3) We should talk about what happened at the party... ', 246, 650, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     the_party()
 
             if event.key == pygame.K_4:
@@ -136,7 +136,7 @@ def say_more_choices_1():
                     update_and_flip()
                     dialogue(' (4) Back                                               ', 246, 675, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     dialogue('                                                        ', 246, 675, 15, underline=True)
                     # Works but need to adjust text rects in certain areas.
                     if back_counter == 0:

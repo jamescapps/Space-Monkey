@@ -1,5 +1,6 @@
 import pygame
 from resuable_functions import dialogue, update_and_flip
+from intro import stars
 from Choices import asteroid_choices
 
 size = (800, 800)
@@ -50,6 +51,10 @@ def monkey_and_commander_convo():
         screen.blit(comms_photo, [500, 500])
         update_and_flip()
         screen.blit(commander, [50, 40])
+        update_and_flip()
+        screen.blit(stars, [60, 350])
+        screen.blit(stars, [360, 350])
+        screen.blit(stars, [660, 350])
 
         # Commander
         dialogue(' You are approaching the asteroid belt?', 500, 150, 15)
@@ -68,7 +73,7 @@ def monkey_and_commander_convo():
                     update_and_flip()
                     dialogue(' (1) No ', 248, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     asteroid_choices.say_no_1()
 
             if event.key == pygame.K_2:
@@ -76,7 +81,7 @@ def monkey_and_commander_convo():
                     update_and_flip()
                     dialogue(' (2) Yes ', 242, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     asteroid_choices.say_yes_1()
 
             if event.key == pygame.K_3:
@@ -84,5 +89,5 @@ def monkey_and_commander_convo():
                     update_and_flip()
                     dialogue(' (3) More Choices ', 286, 650, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     asteroid_choices.say_more_choices_1()

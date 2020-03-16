@@ -1,5 +1,6 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue, good_luck, convinced
+from resuable_functions import update_and_flip, dialogue, good_luck
+from asteroid_choices_4 import convinced, trash_response, war_profiteer, liar, responsible, one_time_thing
 
 
 def explain_logically():
@@ -37,23 +38,23 @@ def insult():
                     update_and_flip()
                     dialogue(' (1) You are a piece of trash!                          ', 246, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
-                    # Run trash_response function
+                    pygame.time.delay(1500)
+                    trash_response()
 
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
                     dialogue(' (2) You are a war profiteer!                           ', 246, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
-                    # Run war_profiteer function
+                    pygame.time.delay(1500)
+                    war_profiteer()
 
             if event.key == pygame.K_3:
                 while True:
                     update_and_flip()
                     dialogue(' (3) Forget it...                                       ', 246, 650, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     good_luck()
 
 
@@ -65,6 +66,7 @@ def press_him():
         dialogue(' (1) You are a liar!                                    ', 246, 600, 15)
         dialogue(' (2) I want to know who is responsible and what we are  ', 246, 625, 15)
         dialogue('     going to do about this!                            ', 246, 650, 15)
+        dialogue('                                                        ', 246, 700, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -74,8 +76,8 @@ def press_him():
                     update_and_flip()
                     dialogue(' (1) You are a liar!                                    ', 246, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
-                    # Run liar()
+                    pygame.time.delay(1500)
+                    liar()
 
             if event.key == pygame.K_2:
                 while True:
@@ -83,8 +85,8 @@ def press_him():
                     dialogue(' (2) I want to know who is responsible and what we are  ',  246, 625, 15, underline=True)
                     dialogue('     going to do about this!                            ', 246, 650, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
-                    # Run responsible()
+                    pygame.time.delay(1500)
+                    responsible()
 
 
 def talk_about_it():
@@ -93,7 +95,7 @@ def talk_about_it():
         # Monkey
         update_and_flip()
         dialogue(' (1) Tell him it was a one time thing.                  ', 246, 600, 15)
-        dialogue(' (2) Tell him not to be afraid what people will think.  ', 246, 625, 15)
+        dialogue(' (2) Tell him he better not try it again.               ', 246, 625, 15)
         dialogue(' (3) Forget it...                                       ', 246, 650, 15)
 
         # Underline selection before running next function.
@@ -104,21 +106,22 @@ def talk_about_it():
                     update_and_flip()
                     dialogue(' (1) Tell him it was a one time thing.                  ', 246, 600, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
-                    # Run one_time_thing()
+                    pygame.time.delay(1500)
+                    one_time_thing()
 
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
-                    dialogue(' (2) Tell him not to be afraid what people will think.  ', 246, 625, 15, underline=True)
+                    dialogue(' (2) Tell him he better not try it again.               ', 246, 625, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
-                    # Run don't_be_afraid()
+                    pygame.time.delay(1500)
+                    # Run don't_try_again()
 
             if event.key == pygame.K_3:
                 while True:
                     update_and_flip()
                     dialogue(' (3) Forget it...                                       ', 246, 650, 15, underline=True)
                     pygame.display.flip()
-                    pygame.time.delay(2000)
+                    pygame.time.delay(1500)
                     good_luck()
+                    # Run function to enter asteroid field without weapons.

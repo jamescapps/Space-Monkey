@@ -9,7 +9,7 @@ blue = (0, 6, 40)
 black = (0, 0, 0)
 
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption('Space Monkey')
+pygame.display.set_caption('S p a c e  M o n k e y')
 
 thumbs_up_monkey = pygame.image.load('img/thumbs_up_monkey.png').convert()
 background_image = pygame.image.load('img/about_background.png').convert()
