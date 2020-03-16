@@ -60,8 +60,8 @@ def title_screen():
         screen.blit(side_small_rocket, (350, 700))
         screen.blit(side_small_rocket, (550, 700))
         pygame.display.update()
-        screen.blit(replace_command_text, replace_command_text_rect)
-        update_and_flip()
+        # screen.blit(replace_command_text, replace_command_text_rect)
+        # update_and_flip()
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
