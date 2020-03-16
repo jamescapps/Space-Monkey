@@ -286,3 +286,21 @@ def one_time_thing():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     strong_feelings()
+
+
+def dont_try_again():
+    update_and_flip()
+    dialogue('    Of course I understand.                               '
+             , 520, 100, 15)
+    dialogue('    My deepest apologies Space Monkey.                    '
+             , 520, 125, 15)
+    dialogue('    As a matter of fact, eh, forget about the Prime       '
+             , 520, 150, 15)
+    dialogue('    Directive. Go ahead and blast those asteroids!        '
+             , 520, 175, 15)
+    dialogue('                                                          '
+             , 520, 200, 15)
+    dialogue('                                                          '
+             , 530, 225, 15)
+    pygame.time.delay(3000)
+    # Run function to start asteroid field with weapon.

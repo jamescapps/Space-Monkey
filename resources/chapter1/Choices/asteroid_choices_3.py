@@ -1,6 +1,7 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue, good_luck
-from asteroid_choices_4 import convinced, trash_response, war_profiteer, liar, responsible, one_time_thing
+from asteroid_choices_4 import convinced, trash_response, war_profiteer, liar, responsible, one_time_thing, \
+                               dont_try_again
 
 
 def explain_logically():
@@ -115,7 +116,7 @@ def talk_about_it():
                     dialogue(' (2) Tell him he better not try it again.               ', 246, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run don't_try_again()
+                    dont_try_again()
 
             if event.key == pygame.K_3:
                 while True:
