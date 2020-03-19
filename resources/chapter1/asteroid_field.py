@@ -1,15 +1,17 @@
+import turtle
+import math
+import random
+
+
 # When distance is zero stage is cleared.
 distance_to_end = 1000
+shields = 100
 enemies = []
+lives_left = 3
+end_game = False
 
 
 def game():
-
-    import turtle
-    import math
-    import random
-
-
     # Set up the screen
     wn = turtle.Screen()
     wn.bgcolor('black')
@@ -43,30 +45,39 @@ def game():
     distance_pen.speed(0)
     distance_pen.color('white')
     distance_pen.penup()
-    distance_pen.setposition(-450, 375)
-    distance_string = f'Distance to end of asteroid field: {distance_to_end} m'
+    distance_pen.setposition(-280, -370)
+    distance_string = f'Distance \nto end:\n '
     distance_pen.write(distance_string, False, align='left', font=('Monospace', 12, 'normal'))
     distance_pen.hideturtle()
 
-    # When lives left goes to zero game over.
-    lives_left = 3
+    distance_value_pen = turtle.Turtle()
+    distance_value_pen.speed(0)
+    distance_value_pen.color('white')
+    distance_value_pen.penup()
+    distance_value_pen.setposition(-280, -385)
+    distance_value_string = f'{distance_to_end}m'
+    distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+    distance_value_pen.hideturtle()
 
-    # Draw lives left then remove one after rocket and asteroid collide.
-    # Life 1
-    rocket_lives_one = turtle.Turtle()
-    rocket_lives_one.shape('img/small_rocket.gif')
-    rocket_lives_one.penup()
-    rocket_lives_one.setposition(185, 335)
-    # Life 2
-    rocket_lives_two = turtle.Turtle()
-    rocket_lives_two.shape('img/small_rocket.gif')
-    rocket_lives_two.penup()
-    rocket_lives_two.setposition(230, 335)
-    # Life 3
-    rocket_lives_three = turtle.Turtle()
-    rocket_lives_three.shape('img/small_rocket.gif')
-    rocket_lives_three.penup()
-    rocket_lives_three.setposition(275, 335)
+    # Shields
+    global shields
+    shields_pen = turtle.Turtle()
+    shields_pen.speed(0)
+    shields_pen.color('white')
+    shields_pen.penup()
+    shields_pen.setposition(180, -335)
+    shields_string = f'Shields: '
+    shields_pen.write(shields_string, False, align='left', font=('Monospace', 12, 'normal'))
+    shields_pen.hideturtle()
+
+    shields_value_pen = turtle.Turtle()
+    shields_value_pen.speed(0)
+    shields_value_pen.color('white')
+    shields_value_pen.penup()
+    shields_value_pen.setposition(180, -375)
+    shields_value_string = f'{shields}% '
+    shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+    shields_value_pen.hideturtle()
 
     # Create the control panel
     control_panel = turtle.Turtle()
@@ -92,6 +103,7 @@ def game():
     exhaust.hideturtle()
 
     player_speed = 15
+
     def here_they_come():
         # Choose number of enemies
         number_of_enemies = 8
@@ -108,7 +120,7 @@ def game():
             enemy.penup()
             enemy.speed(0)
             x = random.randint(-200, 200)
-            y = random.randint(100, 250)
+            y = random.randint(250, 280)
             enemy.setposition(x, y)
 
     enemy_speed = 20
@@ -156,9 +168,9 @@ def game():
         if y < 265:
             global distance_to_end
             distance_to_end -= 2
-            distance_pen.clear()
-            distance_string = f'Distance to end of asteroid field: {distance_to_end} m'
-            distance_pen.write(distance_string, False, align='left', font=('Monospace', 12, 'normal'))
+            distance_value_pen.clear()
+            distance_value_string = f'{distance_to_end} m'
+            distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
 
     def move_down():
         y = player.ycor()
@@ -172,9 +184,9 @@ def game():
         if y > -265:
             global distance_to_end
             distance_to_end += 2
-            distance_pen.clear()
-            distance_string = f'Distance to end of asteroid field: {distance_to_end} m'
-            distance_pen.write(distance_string, False, align='left', font=('Monospace', 12, 'normal'))
+            distance_value_pen.clear()
+            distance_value_string = f'{distance_to_end} m'
+            distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
 
     def fire_weapon():
         global weapon_state
@@ -207,6 +219,10 @@ def game():
     # Initialize first wave
     here_they_come()
     while distance_to_end > 0:
+        global end_game
+        if end_game:
+            break
+
         player.showturtle()
         global enemies
         for enemy in enemies:
@@ -223,9 +239,9 @@ def game():
                     e.sety(y)
                 enemy_speed *= -1
                 distance_to_end -= 5
-                distance_pen.clear()
-                distance_string = f'Distance to end of asteroid field: {distance_to_end} m'
-                distance_pen.write(distance_string, False, align='left', font=('Monospace', 12, 'normal'))
+                distance_value_pen.clear()
+                distance_value_string = f'{distance_to_end} m'
+                distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
 
             if enemy.xcor() < -280:
                 for e in enemies:
@@ -234,13 +250,13 @@ def game():
                     e.sety(y)
                 enemy_speed *= -1
                 distance_to_end -= 5
-                distance_pen.clear()
-                distance_string = f'Distance to end of asteroid field: {distance_to_end} m'
-                distance_pen.write(distance_string, False, align='left', font=('Monospace', 12, 'normal'))
+                distance_value_pen.clear()
+                distance_value_string = f'{distance_to_end} m'
+                distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
 
             if enemy.ycor() < -280:
                 x = random.randint(-200, 200)
-                y = random.randint(100, 250)
+                y = random.randint(250, 280)
                 enemy.setposition(x, y)
 
             # Need to have more enemies appear when each batch gets about half way down the page.
@@ -250,24 +266,24 @@ def game():
                 weapon.hideturtle()
                 weapon_state = 'ready'
                 weapon.setposition(0, -400)
-                # Remove the enemy
-                enemy.hideturtle()
+                # Send enemy back to a random spot.
+                x = random.randint(-200, 200)
+                y = random.randint(250, 280)
+                enemy.setposition(x, y)
 
             # Check for collision between player and enemy
             if is_collision(player, enemy):
                 player.hideturtle()
                 enemy.hideturtle()
-                lives_left -= 1
-                if lives_left == 2:
-                    rocket_lives_one.hideturtle()
-                if lives_left == 1:
-                    rocket_lives_two.hideturtle()
-                if lives_left == 0:
-                    rocket_lives_three.hideturtle()
-                    print('Game Over')
-                # Need to restart here...
-                # Pause game and hit enter when ready to start again.
 
+                shields -= 10
+                shields_value_pen.clear()
+                shields_value_string = f'{shields}% '
+                shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+                if shields == 0:
+                    print('Game Over')
+                    end_game = True
+                    break
 
         # Move laser
         y = weapon.ycor()
@@ -277,20 +293,4 @@ def game():
         if weapon.ycor() > 275:
             weapon.hideturtle()
             weapon_state = 'ready'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
