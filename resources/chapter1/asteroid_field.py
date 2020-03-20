@@ -5,9 +5,11 @@ import random
 
 # When distance is zero stage is cleared.
 distance_to_end = 1000
+# When shields are zero game is over.
 shields = 100
+# When warp_drive is zero player cannot move forward or backward.
+warp_drive = 100
 enemies = []
-lives_left = 3
 end_game = False
 
 
@@ -39,7 +41,7 @@ def game():
 
     border_pen.hideturtle()
 
-    # Draw the distance left
+    # Draw the distance left control panel.
     global distance_to_end
     distance_pen = turtle.Turtle()
     distance_pen.speed(0)
@@ -59,7 +61,7 @@ def game():
     distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
     distance_value_pen.hideturtle()
 
-    # Shields
+    # Shields control panel.
     global shields
     shields_pen = turtle.Turtle()
     shields_pen.speed(0)
@@ -67,17 +69,37 @@ def game():
     shields_pen.penup()
     shields_pen.setposition(180, -335)
     shields_string = f'Shields: '
-    shields_pen.write(shields_string, False, align='left', font=('Monospace', 12, 'normal'))
+    shields_pen.write(shields_string, False, align='left', font=('Monospace', 10, 'normal'))
     shields_pen.hideturtle()
 
     shields_value_pen = turtle.Turtle()
     shields_value_pen.speed(0)
     shields_value_pen.color('white')
     shields_value_pen.penup()
-    shields_value_pen.setposition(180, -375)
+    shields_value_pen.setposition(180, -355)
     shields_value_string = f'{shields}% '
-    shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+    shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 15, 'normal'))
     shields_value_pen.hideturtle()
+
+    # Warp Drive control panel.
+    global warp_drive
+    warp_drive_pen = turtle.Turtle()
+    warp_drive_pen.speed(0)
+    warp_drive_pen.color('white')
+    warp_drive_pen.penup()
+    warp_drive_pen.setposition(180, -375)
+    warp_drive_string = f'Warp: '
+    warp_drive_pen.write(warp_drive_string, False, align='left', font=('Monospace', 10, 'normal'))
+    warp_drive_pen.hideturtle()
+
+    warp_drive_value_pen = turtle.Turtle()
+    warp_drive_value_pen.speed(0)
+    warp_drive_value_pen.color('white')
+    warp_drive_value_pen.penup()
+    warp_drive_value_pen.setposition(180, -395)
+    warp_drive_value_string = f'{warp_drive}% '
+    warp_drive_value_pen.write(warp_drive_value_string, False, align='left', font=('Monospace', 15, 'normal'))
+    warp_drive_value_pen.hideturtle()
 
     # Create the control panel
     control_panel = turtle.Turtle()
@@ -85,7 +107,7 @@ def game():
     control_panel.penup()
     control_panel.setposition(0, -350)
 
-    # Create the player turtle
+    # Create the player
     player = turtle.Turtle()
     player.shape('img/small_rocket.gif')
     player.penup()
@@ -93,7 +115,7 @@ def game():
     player.setposition(0, -250)
     player.setheading(90)
 
-    # Create the exhaust turtle
+    # Create the exhaust
     exhaust = turtle.Turtle()
     exhaust.shape('img/exhaust.gif')
     exhaust.penup()
@@ -105,9 +127,7 @@ def game():
     player_speed = 15
 
     def here_they_come():
-        # Choose number of enemies
         number_of_enemies = 8
-        # Create an empty list of enemies
         global enemies
 
         # Add enemies to the list
@@ -125,7 +145,7 @@ def game():
 
     enemy_speed = 20
 
-    # Create the weapon
+    # Create the laser
     weapon = turtle.Turtle()
     weapon.color('blue')
     weapon.shape('img/laser.gif')
@@ -155,38 +175,66 @@ def game():
         exhaust.setx(x)
 
     def move_up():
+        global warp_drive
         y = player.ycor()
-        y += player_speed
+        # Player cannot move up if ward drive is at zero.
+        if warp_drive == 0:
+            y += 0
+        else:
+            y += player_speed
         if y > 265:
             y = 265
         player.sety(y)
         exhaust.sety(y - 75)
         exhaust.showturtle()
         exhaust.hideturtle()
-        # Don't allow distance to decrease if you hit the top boundary?  Probably take away later.
-        # Asteroids are stopping when button is held down.
+
         if y < 265:
             global distance_to_end
             distance_to_end -= 2
             distance_value_pen.clear()
             distance_value_string = f'{distance_to_end} m'
-            distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+            distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
+
+        # Not allow warp to be used if zero, otherwise decrease by 1.
+        if warp_drive == 0:
+            warp_drive -= 0
+        else:
+            warp_drive -= 1
+            warp_drive_value_pen.clear()
+            warp_drive_value_string = f'{warp_drive}% '
+            warp_drive_value_pen.write(warp_drive_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
     def move_down():
+        global warp_drive
         y = player.ycor()
-        y -= player_speed
+        # Player cannot move down if warp drive is at zero.
+        if warp_drive == 0:
+            y -= 0
+        else:
+            y -= player_speed
         if y < -265:
             y = -265
         player.sety(y)
-        # Don't allow distance to increase if you hit bottom boundary.
-        # Clear seems to get muddy when you hold down button.
-        # Asteroids are stopping when button is held down.
+        exhaust.sety(y - 75)
+        exhaust.showturtle()
+        exhaust.hideturtle()
+
         if y > -265:
             global distance_to_end
             distance_to_end += 2
             distance_value_pen.clear()
             distance_value_string = f'{distance_to_end} m'
-            distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+            distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
+
+        # Not allow warp to be used if zero, otherwise decrease by 1.
+        if warp_drive == 0:
+            warp_drive -= 0
+        else:
+            warp_drive -= 1
+            warp_drive_value_pen.clear()
+            warp_drive_value_string = f'{warp_drive}% '
+            warp_drive_value_pen.write(warp_drive_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
     def fire_weapon():
         global weapon_state
@@ -215,7 +263,6 @@ def game():
     wn.onkeypress(fire_weapon, 'space')
 
     # Main game loop
-
     # Initialize first wave
     here_they_come()
     while distance_to_end > 0:
@@ -232,7 +279,7 @@ def game():
             enemy.setx(x)
 
             # Boundary check, then drop.
-            if enemy.xcor() > 280:
+            if enemy.xcor() > 270:
                 for e in enemies:
                     y = e.ycor()
                     y -= 40
@@ -241,9 +288,9 @@ def game():
                 distance_to_end -= 5
                 distance_value_pen.clear()
                 distance_value_string = f'{distance_to_end} m'
-                distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+                distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
-            if enemy.xcor() < -280:
+            if enemy.xcor() < -270:
                 for e in enemies:
                     y = e.ycor()
                     y -= 40
@@ -252,14 +299,14 @@ def game():
                 distance_to_end -= 5
                 distance_value_pen.clear()
                 distance_value_string = f'{distance_to_end} m'
-                distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+                distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
+            # Reset enemy after it drops below screen.
             if enemy.ycor() < -280:
                 x = random.randint(-200, 200)
                 y = random.randint(250, 280)
                 enemy.setposition(x, y)
 
-            # Need to have more enemies appear when each batch gets about half way down the page.
             # Check for laser collision.
             if is_collision(weapon, enemy):
                 # Reset the weapon
@@ -276,10 +323,11 @@ def game():
                 player.hideturtle()
                 enemy.hideturtle()
 
+            # Decrease shields when hit
                 shields -= 10
                 shields_value_pen.clear()
                 shields_value_string = f'{shields}% '
-                shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+                shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 15, 'normal'))
                 if shields == 0:
                     print('Game Over')
                     end_game = True
@@ -294,3 +342,4 @@ def game():
             weapon.hideturtle()
             weapon_state = 'ready'
 
+# Need to add screens for winning and losing.
