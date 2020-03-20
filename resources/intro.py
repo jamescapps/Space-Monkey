@@ -8,9 +8,11 @@ white = (255, 255, 255)
 blue = (0, 6, 40)
 black = (0, 0, 0)
 
+# Screen set up
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('S p a c e  M o n k e y')
 
+# Register images
 thumbs_up_monkey = pygame.image.load('img/thumbs_up_monkey.png').convert()
 background_image = pygame.image.load('img/about_background.png').convert()
 
@@ -28,6 +30,7 @@ blue_star = pygame.image.load('img/blue_star.png').convert()
 planet = pygame.image.load('img/saturn.png').convert()
 
 
+# Functions are named for each section
 def title_screen():
     x = 820
     y = 150
@@ -63,6 +66,7 @@ def title_screen():
         # screen.blit(replace_command_text, replace_command_text_rect)
         # update_and_flip()
 
+        # Hit enter to continue to next screen.
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:

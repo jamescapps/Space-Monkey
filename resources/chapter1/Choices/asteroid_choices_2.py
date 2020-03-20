@@ -4,6 +4,7 @@ from asteroid_choices_3 import explain_logically, insult, press_him, talk_about_
 
 
 def whats_the_problem():
+    # Commander
     dialogue('  Well......                                              '
              , 510, 100, 15)
     dialogue('  What is it.....?                                        '

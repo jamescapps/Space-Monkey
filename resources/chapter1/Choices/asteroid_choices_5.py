@@ -3,6 +3,7 @@ from resuable_functions import dialogue, update_and_flip
 
 
 def i_understand():
+    # Monkey
     dialogue('  Great Commander!  I am glad we are on the same       '
              , 250, 600, 15)
     dialogue('  page.  Now let\'s proceed with the mission!          '
@@ -20,6 +21,7 @@ def i_understand():
 
 
 def strong_feelings():
+    # Monkey
     dialogue('   Commander I told you from the beginning.....         '
              , 250, 600, 15)
     dialogue('  I am a Space Monkey.  I\'ve got no time for          '
@@ -35,6 +37,7 @@ def strong_feelings():
     pygame.time.delay(3000)
 
     while True:
+        # Commander
         update_and_flip()
         dialogue('     Space Monkey...                                    '
                  , 520, 100, 15)

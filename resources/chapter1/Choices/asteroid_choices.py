@@ -3,6 +3,8 @@ from resuable_functions import update_and_flip, dialogue
 from asteroid_choices_2 import good_luck, whats_the_problem, nonsense, bananas, the_party
 from pre_asteroid import monkey_and_commander_convo
 
+
+# Used to determine which section to go back to when arriving on the same dialogue from different places.
 back_counter = 0
 
 

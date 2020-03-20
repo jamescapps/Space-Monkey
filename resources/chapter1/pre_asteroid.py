@@ -3,11 +3,13 @@ from resuable_functions import dialogue, update_and_flip
 from intro import stars
 from Choices import asteroid_choices
 
+
 size = (800, 800)
 screen = pygame.display.set_mode(size)
 black = (0, 0, 0)
 white = (255, 255, 255)
 
+# Register images
 commander = pygame.image.load('img/commander.png').convert()
 comms_photo = pygame.image.load('img/comms_photo.png').convert()
 

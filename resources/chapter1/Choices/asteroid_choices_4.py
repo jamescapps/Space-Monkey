@@ -4,6 +4,7 @@ from asteroid_choices_5 import i_understand, strong_feelings
 
 
 def convinced():
+    # Commander
     dialogue('  You know... that\'s not a bad point....                 '
              , 510, 100, 15)
     dialogue('  Ok Space Monkey... You have permission to ignore the    '
@@ -19,6 +20,7 @@ def convinced():
 def trash_response():
     # Have to start new loop to get rid of underline.
     while True:
+        # Monkey
         dialogue('  You are a piece of trash Commander! It is no secret  '
                  , 250, 600, 15)
         dialogue('  I can not stand the site nor smell of your foul      '
@@ -36,6 +38,7 @@ def trash_response():
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
+                # Commander
                 dialogue('  Space Monkey you seem to forget that I am in command.   '
                          , 520, 100, 15)
                 dialogue('  I have control of your weapons system and I will not    '
@@ -54,6 +57,7 @@ def trash_response():
                 event = pygame.event.wait()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
+                        # Commander
                         dialogue('  Now get in that asteroid field and adhere to the prime  '
                                  , 520, 100, 15)
                         dialogue('  directive.           (enter)                            '
@@ -78,6 +82,7 @@ def trash_response():
 def war_profiteer():
     # Have to start new loop to get rid of underline.
     while True:
+        # Monkey
         dialogue('  Commander I know your secret...                      '
                  , 250, 600, 15)
         dialogue('  You made a sizable fortune as a prominent share      '
@@ -96,6 +101,7 @@ def war_profiteer():
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
+                # Commander
                 dialogue('  Space Monkey....                                        '
                          , 520, 100, 15)
                 dialogue('  How did you find out...?                                '
@@ -120,6 +126,7 @@ def war_profiteer():
 def liar():
     # Have to start new loop to get rid of underline.
     while True:
+        # Monkey
         dialogue('  You are a liar!  You knew very well there were no    '
                  , 250, 600, 15)
         dialogue('  bananas in the capsule!!!!                           '
@@ -155,6 +162,7 @@ def liar():
 def responsible():
     # Have to start new loop to get rid of underline.
     while True:
+        # Monkey
         dialogue('  We need to hold an inquiry and find out who is       '
                  , 250, 600, 15)
         dialogue('  responsible for this.  This injustice shall not      '
@@ -170,6 +178,7 @@ def responsible():
         pygame.time.delay(3000)
         update_and_flip()
 
+        # Commander
         dialogue('  Space Monkey....                                        '
                  , 520, 100, 15)
         dialogue('  Forget about the bananas for 5 seconds.                 '
@@ -185,6 +194,7 @@ def responsible():
         pygame.time.delay(3000)
 
         while True:
+            # Monkey
             update_and_flip()
             dialogue('  (1)  Yes                                             '
                      , 250, 600, 15)
@@ -217,6 +227,7 @@ def responsible():
                         pygame.display.flip()
                         pygame.time.delay(1500)
 
+                        # Commander
                         dialogue('  Space Monkey....                                        '
                                  , 520, 100, 15)
                         dialogue('  that is the best I can do right now.. .                 '
@@ -236,6 +247,7 @@ def responsible():
 def one_time_thing():
     # Have to start new loop to get rid of underline.
     while True:
+        # Monkey
         dialogue('  Look... Commander....                                '
                  , 250, 600, 15)
         dialogue('  We both had a lot of fun, but you know we need to    '
@@ -250,6 +262,7 @@ def one_time_thing():
                  , 250, 725, 15)
         pygame.time.delay(1500)
 
+        # Commander
         update_and_flip()
         dialogue('  (1) Of course I understand.                             '
                  , 520, 100, 15)
@@ -289,6 +302,7 @@ def one_time_thing():
 
 
 def dont_try_again():
+    # Commander
     update_and_flip()
     dialogue('    Of course I understand.                               '
              , 520, 100, 15)
