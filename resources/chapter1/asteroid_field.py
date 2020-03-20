@@ -1,10 +1,53 @@
 import turtle
 import math
 import random
+import pygame
+from resuable_functions import dialogue, update_and_flip
+
+
+# Things to remember-
+# Use the arrow keys to move your ship.
+# Use the space bar to fire your weapon. (if applicable)
+#   -But beware, shooting asteroids causes debris which can be unseen and can cause damage to your ship.
+# Your rocket is using sophisticated technology-
+#   - When you engage your warp drive (moving forward or backward)
+#       - Time stands still
+#       - This can be used to your benefit, however the warp drive will not recharge and once it is out you cannot move up and down.
+#  You win when you survive the asteroid field.
+#  You lose when your shields get to zero.
+def instructions(can_use_weapon):
+    size = (800, 800)
+    screen = pygame.display.set_mode(size)
+    black = (0, 0, 0)
+    pygame.init()
+    while True:
+        screen.fill(black)
+        update_and_flip()
+        dialogue(' T h e  A s t e r o i d  F i e l d                ', 500, 100, 20)
+        dialogue(' Instructions                                     ', 635, 150, 20)
+        dialogue(' Use the arrow keys (up, down, left, right) to move your ship.', 370, 250, 15)
+        dialogue('  Use the space bar to fire your weapon. (If you convinced the Commander...)', 425, 300, 15)
+        dialogue(' -But beware, shooting asteroids can cause debris ', 425, 325, 15)
+        dialogue(' which is invisible and can damage your ship.', 410, 350, 15)
+        dialogue(' Your rocket is using sophisticated technology.', 300, 400, 15)
+        dialogue(' - When you engage your warp drive (moving forward or backward) ', 490, 425, 15)
+        dialogue(' - Time stands still. ', 350, 450, 15)
+        dialogue(' - This can be used to your benefit, however the  ', 475, 475, 15)
+        dialogue(' warp drive will not recharge and once it is  ', 475, 500, 15)
+        dialogue(' depleted you cannot move up or down.  ', 442, 525, 15)
+        dialogue(' You win when you survive the asteroid field.  ', 300, 575, 15)
+        dialogue(' You lose when your shields get to zero.       ', 300, 625, 15)
+        dialogue('                    Good Luck!                      ', 400, 675, 15)
+        dialogue('                    (Enter)                       ', 400, 700, 12)
+
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                game(can_use_weapon)
 
 
 # When distance is zero stage is cleared.
-distance_to_end = 1000
+distance_to_end = 1500
 # When shields are zero game is over.
 shields = 100
 # When warp_drive is zero player cannot move forward or backward.
@@ -13,7 +56,7 @@ enemies = []
 end_game = False
 
 
-def game():
+def game(can_use_weapon):
     # Set up the screen
     wn = turtle.Screen()
     wn.bgcolor('black')
@@ -193,6 +236,9 @@ def game():
             global distance_to_end
             distance_to_end -= 2
             distance_value_pen.clear()
+            # Make sure gauge cannot go below zero.
+            if distance_to_end < 0:
+                distance_to_end = 0
             distance_value_string = f'{distance_to_end} m'
             distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
@@ -224,6 +270,9 @@ def game():
             global distance_to_end
             distance_to_end += 2
             distance_value_pen.clear()
+            # Make sure gauge cannot go below zero.
+            if distance_to_end < 0:
+                distance_to_end = 0
             distance_value_string = f'{distance_to_end} m'
             distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
@@ -260,7 +309,9 @@ def game():
     wn.onkeypress(move_right, 'Right')
     wn.onkeypress(move_up, 'Up')
     wn.onkeypress(move_down, 'Down')
-    wn.onkeypress(fire_weapon, 'space')
+    # Allow use of weapon based on previous conversation
+    if can_use_weapon:
+        wn.onkeypress(fire_weapon, 'space')
 
     # Main game loop
     # Initialize first wave
@@ -287,6 +338,9 @@ def game():
                 enemy_speed *= -1
                 distance_to_end -= 5
                 distance_value_pen.clear()
+                # Make sure gauge cannot go below zero.
+                if distance_to_end < 0:
+                    distance_to_end = 0
                 distance_value_string = f'{distance_to_end} m'
                 distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
@@ -298,6 +352,9 @@ def game():
                 enemy_speed *= -1
                 distance_to_end -= 5
                 distance_value_pen.clear()
+                # Make sure gauge cannot go below zero.
+                if distance_to_end < 0:
+                    distance_to_end = 0
                 distance_value_string = f'{distance_to_end} m'
                 distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
 
@@ -323,7 +380,7 @@ def game():
                 player.hideturtle()
                 enemy.hideturtle()
 
-            # Decrease shields when hit
+                # Decrease shields when hit
                 shields -= 10
                 shields_value_pen.clear()
                 shields_value_string = f'{shields}% '

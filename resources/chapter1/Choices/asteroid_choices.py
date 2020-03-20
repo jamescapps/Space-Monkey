@@ -2,6 +2,7 @@ import pygame
 from resuable_functions import update_and_flip, dialogue
 from asteroid_choices_2 import good_luck, whats_the_problem, nonsense, bananas, the_party
 from pre_asteroid import monkey_and_commander_convo
+from asteroid_field import instructions
 
 
 # Used to determine which section to go back to when arriving on the same dialogue from different places.
@@ -52,7 +53,9 @@ def say_no_1():
                     # Commander
                     update_and_flip()
                     good_luck()
+                    pygame.time.delay(3000)
                     # Run function to enter asteroid field without weapons.
+                    instructions(False)
 
 
 def say_yes_1():
@@ -93,7 +96,9 @@ def say_yes_1():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
-                    # Run function to enter asteroid field without weopons.
+                    pygame.time.delay(3000)
+                    # Run function to enter asteroid field without weapons.
+                    instructions(False)
 
 
 def say_more_choices_1():

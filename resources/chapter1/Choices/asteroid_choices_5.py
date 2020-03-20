@@ -1,5 +1,6 @@
 import pygame
 from resuable_functions import dialogue, update_and_flip
+from asteroid_field import instructions
 
 
 def i_understand():
@@ -18,6 +19,7 @@ def i_understand():
              , 250, 725, 15)
     pygame.time.delay(3000)
     # Run function to enter asteroid field without weapons
+    instructions(False)
 
 
 def strong_feelings():
@@ -53,8 +55,10 @@ def strong_feelings():
                  , 530, 225, 15)
         pygame.time.delay(1500)
 
-        """ pygame.event.clear()
+        pygame.event.clear()
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-            # Run function to enter asteroid field with weapons"""
+                pygame.time.delay(3000)
+                # Run function to enter asteroid field with weapons
+                instructions(True)

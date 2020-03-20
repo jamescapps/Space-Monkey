@@ -1,6 +1,7 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue, good_luck
 from asteroid_choices_3 import explain_logically, insult, press_him, talk_about_it
+from asteroid_field import instructions
 
 
 def whats_the_problem():
@@ -58,7 +59,9 @@ def nonsense():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
+                    pygame.time.delay(3000)
                     # Run function to enter asteroid field without weapons.
+                    instructions(False)
 
 
 def bananas():
@@ -99,7 +102,9 @@ def bananas():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
+                    pygame.time.delay(3000)
                     # Run function to enter asteroid field without weapons.
+                    instructions(False)
 
 
 def the_party():
@@ -138,4 +143,6 @@ def the_party():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
+                    pygame.time.delay(3000)
                     # Run function to enter asteroid field without weapons.
+                    instructions(False)

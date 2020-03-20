@@ -1,6 +1,7 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue
 from asteroid_choices_5 import i_understand, strong_feelings
+from asteroid_field import instructions
 
 
 def convinced():
@@ -14,7 +15,9 @@ def convinced():
     dialogue('  Now get in that asteroid field!                          '
              , 520, 250, 15)
     pygame.time.delay(1500)
+    pygame.time.delay(3000)
     # Run function to start asteroid field with weapons.
+    instructions(True)
 
 
 def trash_response():
@@ -72,11 +75,13 @@ def trash_response():
                                  , 530, 225, 15)
                         pygame.time.delay(1500)
 
-                        """pygame.event.clear()
+                        pygame.event.clear()
                         event = pygame.event.wait()
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_RETURN:
-                                # Run function to enter asteroid field without weapons."""
+                                pygame.time.delay(3000)
+                                # Run function to enter asteroid field without weapons.
+                                instructions(False)
 
 
 def war_profiteer():
@@ -116,11 +121,13 @@ def war_profiteer():
                          , 530, 225, 15)
                 pygame.time.delay(1500)
 
-                """pygame.event.clear()
+                pygame.event.clear()
                 event = pygame.event.wait()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        # Run function to enter asteroid field with weapons."""
+                        pygame.time.delay(3000)
+                        # Run function to enter asteroid field with weapons.
+                        instructions(True)
 
 
 def liar():
@@ -156,7 +163,9 @@ def liar():
                  , 530, 225, 15)
         pygame.time.delay(3000)
 
+        pygame.time.delay(3000)
         # Run function to enter asteroid field without weapons.
+        instructions(False)
 
 
 def responsible():
@@ -218,7 +227,9 @@ def responsible():
                         dialogue(' (1) Yes ', 50, 600, 15, underline=True)
                         pygame.display.flip()
                         pygame.time.delay(1500)
+                        pygame.time.delay(3000)
                         # Run function to enter asteroid field with weapons.
+                        instructions(True)
 
                 if event.key == pygame.K_2:
                     while True:
@@ -242,6 +253,7 @@ def responsible():
                                  , 530, 225, 15)
                         pygame.time.delay(3000)
                         # Run function to enter asteroid field with weapons.
+                        instructions(True)
 
 
 def one_time_thing():
@@ -318,3 +330,4 @@ def dont_try_again():
              , 530, 225, 15)
     pygame.time.delay(3000)
     # Run function to start asteroid field with weapon.
+    instructions(True)

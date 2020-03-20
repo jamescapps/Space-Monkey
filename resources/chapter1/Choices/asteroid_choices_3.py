@@ -2,6 +2,7 @@ import pygame
 from resuable_functions import update_and_flip, dialogue, good_luck
 from asteroid_choices_4 import convinced, trash_response, war_profiteer, liar, responsible, one_time_thing, \
                                dont_try_again
+from asteroid_field import instructions
 
 
 def explain_logically():
@@ -57,6 +58,9 @@ def insult():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
+                    pygame.time.delay(3000)
+                    # Run function to enter asteroid field without weapon.
+                    instructions(False)
 
 
 def press_him():
@@ -125,4 +129,6 @@ def talk_about_it():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
+                    pygame.time.delay(3000)
                     # Run function to enter asteroid field without weapons.
+                    instructions(False)
