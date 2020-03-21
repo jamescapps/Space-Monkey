@@ -1,4 +1,5 @@
 import pygame
+import turtle
 
 
 size = (800, 800)
@@ -32,4 +33,3 @@ def good_luck():
     dialogue('                                                          '
              , 520, 250, 15)
     pygame.time.delay(1500)
-

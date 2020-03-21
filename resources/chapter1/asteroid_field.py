@@ -3,18 +3,20 @@ import math
 import random
 import pygame
 from resuable_functions import dialogue, update_and_flip
+from intro import title_screen
+import time
 
 
-# Things to remember-
-# Use the arrow keys to move your ship.
-# Use the space bar to fire your weapon. (if applicable)
-#   -But beware, shooting asteroids causes debris which can be unseen and can cause damage to your ship.
-# Your rocket is using sophisticated technology-
-#   - When you engage your warp drive (moving forward or backward)
-#       - Time stands still
-#       - This can be used to your benefit, however the warp drive will not recharge and once it is out you cannot move up and down.
-#  You win when you survive the asteroid field.
-#  You lose when your shields get to zero.
+# When distance is zero stage is cleared.
+distance_to_end = 1500
+# When shields are zero game is over.
+shields = 100
+# When warp_drive is zero player cannot move forward or backward.
+warp_drive = 100
+enemies = []
+end_game = False
+
+
 def instructions(can_use_weapon):
     size = (800, 800)
     screen = pygame.display.set_mode(size)
@@ -46,19 +48,10 @@ def instructions(can_use_weapon):
                 game(can_use_weapon)
 
 
-# When distance is zero stage is cleared.
-distance_to_end = 1500
-# When shields are zero game is over.
-shields = 100
-# When warp_drive is zero player cannot move forward or backward.
-warp_drive = 100
-enemies = []
-end_game = False
-
-
 def game(can_use_weapon):
     # Set up the screen
     wn = turtle.Screen()
+    wn.reset()
     wn.bgcolor('black')
     wn.title('T h e  A s t e r o i d  F i e l d')
     wn.bgpic('img/asteroid_background.gif')
@@ -101,7 +94,7 @@ def game(can_use_weapon):
     distance_value_pen.penup()
     distance_value_pen.setposition(-280, -385)
     distance_value_string = f'{distance_to_end}m'
-    distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 20, 'normal'))
+    distance_value_pen.write(distance_value_string, False, align='left', font=('Monospace', 15, 'normal'))
     distance_value_pen.hideturtle()
 
     # Shields control panel.
@@ -232,7 +225,7 @@ def game(can_use_weapon):
         exhaust.showturtle()
         exhaust.hideturtle()
 
-        if y < 265:
+        if y < 265 and warp_drive != 0:
             global distance_to_end
             distance_to_end -= 2
             distance_value_pen.clear()
@@ -266,7 +259,7 @@ def game(can_use_weapon):
         exhaust.showturtle()
         exhaust.hideturtle()
 
-        if y > -265:
+        if y > -265 and warp_drive != 0:
             global distance_to_end
             distance_to_end += 2
             distance_value_pen.clear()
@@ -378,8 +371,6 @@ def game(can_use_weapon):
             # Check for collision between player and enemy
             if is_collision(player, enemy):
                 player.hideturtle()
-                enemy.hideturtle()
-
                 # Decrease shields when hit
                 shields -= 10
                 shields_value_pen.clear()
@@ -399,4 +390,45 @@ def game(can_use_weapon):
             weapon.hideturtle()
             weapon_state = 'ready'
 
-# Need to add screens for winning and losing.
+    # Outcome
+    if distance_to_end == 0:
+        # Stage Clear
+        winner_pen = turtle.Turtle()
+        winner_pen.speed(0)
+        winner_pen.color('white')
+        winner_pen.penup()
+        winner_pen.setposition(-85, 0)
+        winner_string = 'Stage Clear!'
+        winner_pen.write(winner_string, False, align='left', font=('Monospace', 20, 'normal'))
+        time.sleep(5)
+        wn.bye()
+        winner()
+
+    if shields == 0:
+        # Game Over
+        game_over_pen = turtle.Turtle()
+        game_over_pen.speed(0)
+        game_over_pen.color('white')
+        game_over_pen.penup()
+        game_over_pen.setposition(-85, 0)
+        game_over_string = 'Game Over\n'
+        game_over_pen.write(game_over_string, False, align='left', font=('Monospace', 20, 'normal'))
+        game_over_pen.hideturtle()
+
+
+def winner():
+    size = (800, 800)
+    screen = pygame.display.set_mode(size)
+    black = (0, 0, 0)
+    pygame.init()
+    while True:
+        screen.fill(black)
+        update_and_flip()
+        dialogue(' Congratulations!               ', 500, 300, 20)
+        dialogue(' You have successfully navigated the asteroid field!', 420, 400, 15)
+        dialogue('                    (Enter)                       ', 420, 500, 12)
+
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                print('Movin on!')
