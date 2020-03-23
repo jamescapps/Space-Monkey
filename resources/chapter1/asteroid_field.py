@@ -5,6 +5,7 @@ import pygame
 from resuable_functions import dialogue, update_and_flip
 from intro import title_screen
 from chapter1 import pre_asteroid
+from chapter2 import test
 import time
 
 
@@ -443,5 +444,6 @@ def winner():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 # Return to main app page to run next function
+                test.test()
 
 
