@@ -4,6 +4,7 @@ import random
 import pygame
 from resuable_functions import dialogue, update_and_flip
 from intro import title_screen
+from chapter1 import pre_asteroid
 import time
 
 
@@ -191,7 +192,7 @@ def game(can_use_weapon):
     weapon.shapesize(0.5, 0.5)
     weapon.hideturtle()
 
-    weapon_speed = 20
+    weapon_speed = 50
 
     # Functions
     def move_left():
@@ -377,7 +378,6 @@ def game(can_use_weapon):
                 shields_value_string = f'{shields}% '
                 shields_value_pen.write(shields_value_string, False, align='left', font=('Monospace', 15, 'normal'))
                 if shields == 0:
-                    print('Game Over')
                     end_game = True
                     break
 
@@ -400,6 +400,7 @@ def game(can_use_weapon):
         winner_pen.setposition(-85, 0)
         winner_string = 'Stage Clear!'
         winner_pen.write(winner_string, False, align='left', font=('Monospace', 20, 'normal'))
+        winner_pen.hideturtle()
         time.sleep(5)
         wn.bye()
         winner()
@@ -411,9 +412,19 @@ def game(can_use_weapon):
         game_over_pen.color('white')
         game_over_pen.penup()
         game_over_pen.setposition(-85, 0)
-        game_over_string = 'Game Over\n'
+        game_over_string = 'Game Over\nTry Again'
         game_over_pen.write(game_over_string, False, align='left', font=('Monospace', 20, 'normal'))
         game_over_pen.hideturtle()
+        time.sleep(5)
+
+        # Reset
+        end_game = False
+        shields = 100
+        warp_drive = 100
+        distance_to_end = 1500
+        enemies = []
+        wn.reset()
+        game(can_use_weapon)
 
 
 def winner():
@@ -431,4 +442,6 @@ def winner():
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                print('Movin on!')
+                # Return to main app page to run next function
+
+
