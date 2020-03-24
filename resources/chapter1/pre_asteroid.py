@@ -18,6 +18,7 @@ comms_photo = pygame.image.load('img/comms_photo.png').convert()
 # Back still appearing in certain parts.
 def commander_convo():
     while True:
+        screen.fill(black)
         screen.blit(commander, [290, 200])
         update_and_flip()
 

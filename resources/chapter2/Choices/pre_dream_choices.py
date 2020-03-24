@@ -13,7 +13,7 @@ def say_no():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' (1) You are kind of a dick. ', 243, 600, 15)
+        dialogue(' (1) You are kind of a jerk. ', 243, 600, 15)
         dialogue(' (2) Nothing.. I am ready... ', 246, 625, 15)
 
         # Underline selection before running next function.
@@ -22,7 +22,7 @@ def say_no():
             if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
-                    dialogue(' (1) You are kind of a dick. ', 248, 600, 15, underline=True)
+                    dialogue(' (1) You are kind of a jerk. ', 248, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function

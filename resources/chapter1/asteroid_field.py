@@ -443,6 +443,6 @@ def winner():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 # Run next chapter...
-                pre_dream.test()
+                pre_dream.main()
 
 
