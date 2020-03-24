@@ -5,7 +5,7 @@ import pygame
 from resuable_functions import dialogue, update_and_flip
 from intro import title_screen
 from chapter1 import pre_asteroid
-from chapter2 import test
+from chapter2 import pre_dream
 import time
 
 
@@ -31,18 +31,17 @@ def instructions(can_use_weapon):
         dialogue(' Instructions                                     ', 635, 150, 20)
         dialogue(' Use the arrow keys (up, down, left, right) to move your ship.', 370, 250, 15)
         dialogue('  Use the space bar to fire your weapon. (If you convinced the Commander...)', 425, 300, 15)
-        dialogue(' -But beware, shooting asteroids can cause debris ', 425, 325, 15)
-        dialogue(' which is invisible and can damage your ship.', 410, 350, 15)
-        dialogue(' Your rocket is using sophisticated technology.', 300, 400, 15)
-        dialogue(' - When you engage your warp drive (moving forward or backward) ', 490, 425, 15)
-        dialogue(' - Time stands still. ', 350, 450, 15)
-        dialogue(' - This can be used to your benefit, however the  ', 475, 475, 15)
-        dialogue(' warp drive will not recharge and once it is  ', 475, 500, 15)
-        dialogue(' depleted you cannot move up or down.  ', 442, 525, 15)
-        dialogue(' You win when you survive the asteroid field.  ', 300, 575, 15)
-        dialogue(' You lose when your shields get to zero.       ', 300, 625, 15)
-        dialogue('                    Good Luck!                      ', 400, 675, 15)
-        dialogue('                    (Enter)                       ', 400, 700, 12)
+        dialogue(' -But beware, shooting asteroids may cause debris... ', 425, 325, 15)
+        dialogue(' Your rocket is using sophisticated technology.', 300, 375, 15)
+        dialogue(' - When you engage your warp drive (moving forward or backward) ', 490, 400, 15)
+        dialogue(' - Time stands still. ', 350, 425, 15)
+        dialogue(' - This can be used to your benefit, however the  ', 475, 450, 15)
+        dialogue(' warp drive will not recharge and once it is  ', 475, 475, 15)
+        dialogue(' depleted you cannot move up or down.  ', 442, 500, 15)
+        dialogue(' You win when you survive the asteroid field.  ', 300, 550, 15)
+        dialogue(' You lose when your shields get to zero.       ', 300, 600, 15)
+        dialogue('                    Good Luck!                      ', 400, 650, 15)
+        dialogue('                    (Enter)                       ', 400, 675, 12)
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
@@ -443,7 +442,7 @@ def winner():
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                # Return to main app page to run next function
-                test.test()
+                # Run next chapter...
+                pre_dream.test()
 
 

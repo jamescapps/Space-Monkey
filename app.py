@@ -1,6 +1,6 @@
 import intro
 from chapter1 import pre_asteroid
-from chapter2 import test
+from chapter2 import pre_dream
 
 
 def main():
@@ -12,13 +12,13 @@ def main():
     #intro.flying_through_space_2()
 
     # Chapter 1- The Asteroid Field
-    pre_asteroid.commander_convo()
-    pre_asteroid.monkey_convo()
-    pre_asteroid.monkey_and_commander_convo()
+    #pre_asteroid.commander_convo()
+    #pre_asteroid.monkey_convo()
+    #pre_asteroid.monkey_and_commander_convo()
     # Asteroid field game is ran within these functions based on outcome of conversations.
 
-    # Chapter 2- The Planet
-    test.test()
+    # Chapter 2- The Dream
+    pre_dream.main()
 
 
 main()

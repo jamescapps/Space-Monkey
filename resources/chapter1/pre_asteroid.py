@@ -15,14 +15,14 @@ comms_photo = pygame.image.load('img/comms_photo.png').convert()
 
 
 # Need to center commander on screen more.
-#Back still appearing in certain parts.
+# Back still appearing in certain parts.
 def commander_convo():
     while True:
-        screen.blit(commander, [300, 200])
+        screen.blit(commander, [290, 200])
         update_and_flip()
 
-        dialogue(' Space Monkey! Are you there?  Do you read me?... ', 400, 500, 20)
-        dialogue('                    (Enter)                       ', 400, 525, 12)
+        dialogue(' Space Monkey! Are you there?  Do you read me?... ', 420, 500, 20)
+        dialogue('                    (Enter)                       ', 420, 525, 12)
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
