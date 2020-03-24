@@ -51,8 +51,8 @@ def say_yes():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' (1) Say something nice... ', 243, 600, 15)
-        dialogue(' (2) Say something mean... ', 243, 625, 15)
+        dialogue(' (1) Say something nice. ', 243, 600, 15)
+        dialogue(' (2) Say something mean. ', 243, 625, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
