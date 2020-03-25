@@ -31,7 +31,7 @@ def instructions(can_use_weapon):
         dialogue(' Instructions                                     ', 635, 150, 20)
         dialogue(' Use the arrow keys (up, down, left, right) to move your ship.', 370, 250, 15)
         dialogue('  Use the space bar to fire your weapon. (If you convinced the Commander...)', 425, 300, 15)
-        dialogue(' -But beware, shooting asteroids may cause debris... ', 425, 325, 15)
+        dialogue('   -But beware, shooting asteroids may cause debris... ', 425, 325, 15)
         dialogue(' Your rocket is using sophisticated technology.', 300, 375, 15)
         dialogue(' - When you engage your warp drive (moving forward or backward) ', 490, 400, 15)
         dialogue(' - Time stands still. ', 350, 425, 15)

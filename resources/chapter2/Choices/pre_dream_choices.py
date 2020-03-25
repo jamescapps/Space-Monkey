@@ -1,5 +1,7 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue
+from resuable_functions import update_and_flip, dialogue, good_luck
+from chapter2 import dream
+from chapter2.Choices import pre_dream_choices_2
 
 
 def say_no():
@@ -13,8 +15,8 @@ def say_no():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' (1) You are kind of a jerk. ', 243, 600, 15)
-        dialogue(' (2) Nothing.. I am ready... ', 246, 625, 15)
+        dialogue(' (1) I was just hoping we could chat. ', 243, 600, 15)
+        dialogue(' (2) Nothing.. I am ready...          ', 243, 625, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -22,18 +24,21 @@ def say_no():
             if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
-                    dialogue(' (1) You are kind of a jerk. ', 248, 600, 15, underline=True)
+                    dialogue(' (1) I was just hoping we could chat. ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function
+                    pre_dream_choices_2.have_a_chat()
 
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
-                    dialogue(' (2) Nothing.. I am ready... ', 242, 625, 15, underline=True)
+                    dialogue(' (2) Nothing.. I am ready...          ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    good_luck()
+                    # Run function to start the dream.
+                    dream.dream()
 
 
 def say_yes():
@@ -64,6 +69,7 @@ def say_yes():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function
+                    # something_nice()
 
             if event.key == pygame.K_2:
                 while True:
@@ -72,3 +78,4 @@ def say_yes():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function
+                    # something_mean()

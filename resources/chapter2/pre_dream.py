@@ -1,5 +1,4 @@
 import pygame
-from resuable_functions import update_and_flip
 from intro import flying_through_space_1, stars
 from pre_asteroid import commander_convo, monkey_convo
 from resuable_functions import dialogue, update_and_flip
@@ -59,7 +58,7 @@ def nice_work():
 
 
 def main():
-    #flying_through_space_1()
+    flying_through_space_1()
     commander_convo()
     monkey_convo()
     nice_work()

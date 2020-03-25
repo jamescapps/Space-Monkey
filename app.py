@@ -1,6 +1,6 @@
 import intro
 from chapter1 import pre_asteroid
-from chapter2 import pre_dream
+from chapter2 import pre_dream, dream
 
 
 def main():
@@ -19,6 +19,7 @@ def main():
 
     # Chapter 2- The Dream
     #pre_dream.main()
+    #dream.dream()
 
 
 main()
