@@ -1,5 +1,5 @@
 import pygame
-from resuable_functions import update_and_flip
+from resuable_functions import update_and_flip, dialogue
 
 pygame.init()
 
@@ -42,6 +42,21 @@ def dream():
             screen.blit(moon, (x, y))
             x -= 25
             y -= 25
+
+    def dream_intro():
+        size = (800, 800)
+        screen = pygame.display.set_mode(size)
+        black = (0, 0, 0)
+        pygame.init()
+        while True:
+            screen.fill(black)
+            update_and_flip()
+            dialogue(' T h e  D r e a m               ', 500, 100, 20)
+            dialogue('      (enter)                   ', 500, 500, 20)
+            event = pygame.event.wait()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    dream_one()
 
     def dream_one():
         update_and_flip()
@@ -102,4 +117,4 @@ def dream():
             update_and_flip()
 
     flashing_monkey_moon()
-    dream_one()
+    dream_intro()

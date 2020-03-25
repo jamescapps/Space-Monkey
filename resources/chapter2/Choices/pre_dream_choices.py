@@ -68,8 +68,7 @@ def say_yes():
                     dialogue(' (1) Say something nice, ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
-                    # something_nice()
+                    pre_dream_choices_2.something_nice()
 
             if event.key == pygame.K_2:
                 while True:
@@ -77,5 +76,4 @@ def say_yes():
                     dialogue(' (2) Say something mean. ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
-                    # something_mean()
+                    pre_dream_choices_2.something_mean()

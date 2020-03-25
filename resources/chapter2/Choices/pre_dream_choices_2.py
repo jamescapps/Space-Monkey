@@ -1,6 +1,7 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue, good_luck
 from chapter2 import dream
+from chapter2.Choices import pre_dream_choices_3
 
 
 def have_a_chat():
@@ -27,15 +28,15 @@ def have_a_chat():
                     dialogue(' (1) What should I expect during hibernation? ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_3.hybernation_explanation()
 
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
                     dialogue(' (2) Get personal                             ', 243, 625, 15, underline=True)
-                    pygame.display.flip()3
+                    pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_3.get_personal()
 
             if event.key == pygame.K_3:
                 while True:
@@ -65,7 +66,7 @@ def something_nice():
                     dialogue(' (1) It has been a pleasure Commander.        ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_3.pleasure()
 
             if event.key == pygame.K_2:
                 while True:
@@ -74,6 +75,7 @@ def something_nice():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function
+                    pre_dream_choices_3.miss_you()
 
 
 def something_mean():
@@ -89,10 +91,11 @@ def something_mean():
             if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
-                    dialogue(' (1) I have never liked you.                  ', 243, 243, 600, 15, underline=True)
+                    dialogue(' (1) I have never liked you.                  ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function
+                    # never_liked_you()
 
             if event.key == pygame.K_2:
                 while True:
@@ -101,3 +104,4 @@ def something_mean():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     # Run next function
+                    # not_miss_you()
