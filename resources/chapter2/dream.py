@@ -29,6 +29,21 @@ animation_object = pygame.image.load('img/dream/animation_one.jpg')
 
 
 def dream():
+    def dream_intro():
+        size = (800, 800)
+        screen = pygame.display.set_mode(size)
+        black = (0, 0, 0)
+        pygame.init()
+        while True:
+            screen.fill(black)
+            update_and_flip()
+            dialogue(' T h e  D r e a m               ', 500, 100, 20)
+            dialogue('      (enter)                   ', 500, 500, 20)
+            event = pygame.event.wait()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    flashing_monkey_moon()
+
     def flashing_monkey_moon():
         x = -200
         y = 0
@@ -43,20 +58,7 @@ def dream():
             x -= 25
             y -= 25
 
-    def dream_intro():
-        size = (800, 800)
-        screen = pygame.display.set_mode(size)
-        black = (0, 0, 0)
-        pygame.init()
-        while True:
-            screen.fill(black)
-            update_and_flip()
-            dialogue(' T h e  D r e a m               ', 500, 100, 20)
-            dialogue('      (enter)                   ', 500, 500, 20)
-            event = pygame.event.wait()
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
-                    dream_one()
+        dream_one()
 
     def dream_one():
         update_and_flip()
@@ -93,17 +95,6 @@ def dream():
         pygame.time.delay(1500)
         update_and_flip()
         screen.fill(black)
-        screen.blit(dream8, (0, 0))
-        pygame.time.delay(1500)
-        update_and_flip()
-        screen.fill(black)
-        screen.blit(dream9, (0, 0))
-        pygame.time.delay(750)
-        # What is happening here? Delay is longer and sometimes last image doesn't show.
-        update_and_flip()
-        screen.fill(black)
-        screen.blit(dream11, (0, 0))
-        pygame.time.delay(10000)
 
         x = 300
         y = 500
@@ -116,5 +107,5 @@ def dream():
             pygame.display.flip()
             update_and_flip()
 
-    flashing_monkey_moon()
     dream_intro()
+

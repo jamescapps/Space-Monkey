@@ -36,8 +36,7 @@ def perceive_time():
                     dialogue(' (2) Then what is death?                      ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
-                    # what_is_death()
+                    pre_dream_choices_5.what_is_death()
 
             if event.key == pygame.K_3:
                 while True:
@@ -68,8 +67,7 @@ def long_term_effects():
                 dialogue(' (1) Lie                                           ', 243, 600, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
-                # Run next function
-                # lie()
+                pre_dream_choices_5.lie()
 
         if event.key == pygame.K_2:
             while True:
@@ -77,8 +75,7 @@ def long_term_effects():
                 dialogue(' (2) Tell the truth                                ', 243, 625, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
-                # Run next function
-                # truth
+                pre_dream_choices_5.truth()
 
 
 def afraid_to_die():
@@ -122,8 +119,7 @@ def miss_me():
                 dialogue(' (1) In a professional manner.                     ', 243, 600, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
-                # Run next function
-                # professional()
+                pre_dream_choices_5.professional()
 
         if event.key == pygame.K_2:
             while True:

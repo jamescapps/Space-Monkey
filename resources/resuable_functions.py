@@ -32,4 +32,6 @@ def good_luck():
              , 520, 200, 15)
     dialogue('                                                          '
              , 520, 250, 15)
+    dialogue('                                                          '
+             , 520, 300, 15)
     pygame.time.delay(1500)

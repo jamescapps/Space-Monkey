@@ -58,7 +58,7 @@ def nice_work():
 
 
 def main():
-    flying_through_space_1()
+    #flying_through_space_1()
     commander_convo()
     monkey_convo()
     nice_work()
