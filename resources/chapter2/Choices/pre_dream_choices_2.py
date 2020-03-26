@@ -17,7 +17,7 @@ def have_a_chat():
         update_and_flip()
         dialogue(' (1) What should I expect during hibernation? ', 243, 600, 15)
         dialogue(' (2) Get personal                             ', 243, 625, 15)
-        dialogue(' (3) Nothing.. I am ready... ', 246, 650, 15)
+        dialogue(' (3) Nothing.. I am ready...                  ', 243, 650, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()

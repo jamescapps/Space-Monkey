@@ -1,6 +1,7 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue, good_luck
 from chapter2 import dream
+from chapter2.Choices import pre_dream_choices_4
 
 
 def hybernation_explanation():
@@ -16,7 +17,7 @@ def hybernation_explanation():
         update_and_flip()
         dialogue(' (1) Will I perceive time?                    ', 243, 600, 15)
         dialogue(' (2) Are there any long-term effects?         ', 243, 625, 15)
-        dialogue(' (3) Well let\'s get to it!                   ', 243, 650, 15)
+        dialogue('(3) Well let\'s get to it!                   ', 243, 650, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -27,7 +28,7 @@ def hybernation_explanation():
                     dialogue(' (1) Will I perceive time?                    ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_4.perceive_time()
 
             if event.key == pygame.K_2:
                 while True:
@@ -35,7 +36,7 @@ def hybernation_explanation():
                     dialogue(' (2) Are there any long-term effects?         ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_4.long_term_effects()
 
             if event.key == pygame.K_3:
                 while True:
@@ -53,9 +54,9 @@ def get_personal():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' (1) Are you afraid to die?   ', 243, 600, 15)
-        dialogue(' (2) Will you miss me?        ', 243, 625, 15)
-        dialogue(' (3) Nothing.. I am ready...  ', 243, 650, 15)
+        dialogue(' (1) Are you afraid to die?                    ', 243, 600, 15)
+        dialogue(' (2) Will you miss me?                         ', 243, 625, 15)
+        dialogue(' (3) Nothing.. I am ready...                   ', 243, 650, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()
@@ -66,7 +67,7 @@ def get_personal():
                     dialogue(' (1) Are you afraid to die?   ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_4.afraid_to_die()
 
             if event.key == pygame.K_2:
                 while True:
@@ -74,7 +75,7 @@ def get_personal():
                     dialogue(' (2) Will you miss me?        ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
+                    pre_dream_choices_4.miss_me()
 
             if event.key == pygame.K_3:
                 while True:
