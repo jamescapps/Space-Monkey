@@ -74,7 +74,6 @@ def something_nice():
                     dialogue(' (2) I will miss you...                       ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
                     pre_dream_choices_3.miss_you()
 
 
@@ -94,8 +93,7 @@ def something_mean():
                     dialogue(' (1) I have never liked you.                  ', 243, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
-                    # never_liked_you()
+                    pre_dream_choices_3.never_liked_you()
 
             if event.key == pygame.K_2:
                 while True:
@@ -103,5 +101,4 @@ def something_mean():
                     dialogue(' (2) I will not miss you...                    ', 243, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
-                    # not_miss_you()
+                    pre_dream_choices_3.not_miss_you()
