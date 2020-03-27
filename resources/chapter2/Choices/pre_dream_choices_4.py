@@ -53,10 +53,10 @@ def perceive_time():
 def long_term_effects():
     # Commander
     update_and_flip()
-    dialogue(' (1) Lie                                           ', 490, 150, 15)
-    dialogue(' (2) Tell the truth                                ', 490, 200, 15)
-    dialogue('                                                   ', 490, 250, 15)
-    dialogue('                                                   ', 490, 300, 15)
+    dialogue(' (1) Lie                                           ', 520, 100, 15)
+    dialogue(' (2) Tell the truth                                ', 520, 150, 15)
+    dialogue('                                                   ', 520, 200, 15)
+    dialogue('                                                   ', 520, 250, 15)
 
     # Underline selection before running next function.
     event = pygame.event.wait()
@@ -64,7 +64,7 @@ def long_term_effects():
         if event.key == pygame.K_1:
             while True:
                 update_and_flip()
-                dialogue(' (1) Lie                                           ', 248, 600, 15, underline=True)
+                dialogue(' (1) Lie                                           ', 525, 100, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 pre_dream_choices_5.lie()
@@ -72,7 +72,7 @@ def long_term_effects():
         if event.key == pygame.K_2:
             while True:
                 update_and_flip()
-                dialogue(' (2) Tell the truth                                ', 248, 625, 15, underline=True)
+                dialogue(' (2) Tell the truth                                ', 525, 150, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 pre_dream_choices_5.truth()
