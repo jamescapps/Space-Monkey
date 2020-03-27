@@ -6,10 +6,10 @@ from chapter2 import dream
 def no_meaning():
     # Commander
     update_and_flip()
-    dialogue(' The question of meaning is separate from the         ', 500, 150, 15)
-    dialogue(' question of what existence is. So no that is         ', 500, 200, 15)
-    dialogue(' not what I am saying. I can comment on existence     ', 500, 250, 15)
-    dialogue(' because we share it. Meaning is yours alone.         ', 500, 300, 15)
+    dialogue(' The question of meaning is separate from the         ', 520, 100, 15)
+    dialogue(' question of what existence is. So no that is         ', 520, 150, 15)
+    dialogue(' not what I am saying. I can comment on existence     ', 520, 200, 15)
+    dialogue(' because we share it. Meaning is yours alone.         ', 520, 250, 15)
 
     pygame.time.delay(10000)
 
@@ -17,13 +17,12 @@ def no_meaning():
         # Monkey
         update_and_flip()
         dialogue(' I am ready commander.                        ', 243, 600, 15)
-        dialogue('Let\'s get to it!                            ', 243, 625, 15)
+        dialogue('Let\'s get this show on the road!             ', 243, 625, 15)
         dialogue('                                              ', 243, 650, 15)
 
         pygame.time.delay(1500)
         good_luck()
-        # Run function to enter dream
-        # Need a better transition into dream...
+        pygame.time.delay(1500)
         dream.dream()
 
 

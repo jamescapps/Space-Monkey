@@ -7,10 +7,10 @@ from chapter2.Choices import pre_dream_choices_4
 def hybernation_explanation():
     # Commander
     update_and_flip()
-    dialogue(' Your body will be in suspension.       ', 490, 150, 15)
-    dialogue(' However, your mind will be active.     ', 490, 200, 15)
-    dialogue(' Essentially you will be having a       ', 490, 250, 15)
-    dialogue(' 750 year long dream...                 ', 490, 300, 15)
+    dialogue(' Your body will be in suspension.       ', 490, 100, 15)
+    dialogue(' However, your mind will be active.     ', 490, 150, 15)
+    dialogue(' Essentially you will be having a       ', 490, 200, 15)
+    dialogue(' 750 year long dream...                 ', 490, 250, 15)
 
     while True:
         # Monkey
@@ -25,7 +25,7 @@ def hybernation_explanation():
             if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
-                    dialogue(' (1) Will I perceive time?                    ', 243, 600, 15, underline=True)
+                    dialogue(' (1) Will I perceive time?                    ', 248, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices_4.perceive_time()
@@ -33,7 +33,7 @@ def hybernation_explanation():
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
-                    dialogue(' (2) Are there any long-term effects?         ', 243, 625, 15, underline=True)
+                    dialogue(' (2) Are there any long-term effects?         ', 248, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices_4.long_term_effects()
@@ -41,7 +41,7 @@ def hybernation_explanation():
             if event.key == pygame.K_3:
                 while True:
                     update_and_flip()
-                    dialogue(' (3) Well let\'s get to it!                   ', 243, 650, 15, underline=True)
+                    dialogue(' (3) Well let\'s get to it!                   ', 248, 650, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
@@ -64,7 +64,7 @@ def get_personal():
             if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
-                    dialogue(' (1) Are you afraid to die?   ', 243, 600, 15, underline=True)
+                    dialogue(' (1) Are you afraid to die?                    ', 248, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices_4.afraid_to_die()
@@ -72,7 +72,7 @@ def get_personal():
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
-                    dialogue(' (2) Will you miss me?        ', 243, 625, 15, underline=True)
+                    dialogue(' (2) Will you miss me?                         ', 248, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices_4.miss_me()
@@ -80,7 +80,7 @@ def get_personal():
             if event.key == pygame.K_3:
                 while True:
                     update_and_flip()
-                    dialogue(' (3) Nothing.. I am ready...  ', 243, 650, 15, underline=True)
+                    dialogue(' (3) Nothing.. I am ready...                   ', 248, 650, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()

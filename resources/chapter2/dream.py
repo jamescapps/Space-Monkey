@@ -21,19 +21,12 @@ dream4 = pygame.image.load('img/dream/dream4.jpeg')
 dream5 = pygame.image.load('img/dream/dream5.jpeg')
 dream6 = pygame.image.load('img/dream/dream6.jpeg')
 dream7 = pygame.image.load('img/dream/dream7.jpeg')
-dream8 = pygame.image.load('img/dream/dream8.jpeg')
-dream9 = pygame.image.load('img/dream/dream9.jpeg')
-dream11 = pygame.image.load('img/dream/dream11.jpeg')
 dream1_background = pygame.image.load('img/dream/img1_background_animate.jpeg')
 animation_object = pygame.image.load('img/dream/animation_one.jpg')
 
 
 def dream():
     def dream_intro():
-        size = (800, 800)
-        screen = pygame.display.set_mode(size)
-        black = (0, 0, 0)
-        pygame.init()
         while True:
             screen.fill(black)
             update_and_flip()
@@ -91,10 +84,6 @@ def dream():
         pygame.time.delay(3000)
         update_and_flip()
         screen.fill(black)
-        screen.blit(dream7, (0, 0))
-        pygame.time.delay(1500)
-        update_and_flip()
-        screen.fill(black)
 
         x = 300
         y = 500
@@ -106,6 +95,16 @@ def dream():
             screen.blit(animation_object, (x, y))
             pygame.display.flip()
             update_and_flip()
+
+        screen.fill(black)
+        update_and_flip()
+        dialogue(' W h o  a r e  y o u ?              ', 500, 200, 20)
+        pygame.time.delay(3500)
+
+        screen.fill(black)
+        update_and_flip()
+        dialogue(' W h o  i s  a n y o n e ?              ', 500, 200, 20)
+        pygame.time.delay(3500)
 
     dream_intro()
 

@@ -28,10 +28,10 @@ def nice_work():
         screen.blit(stars, [660, 350])
 
         # Commander
-        dialogue(' Nice work in the asteroid field!       ', 490, 150, 15)
-        dialogue(' Are you ready to enter hybernation?    ', 490, 200, 15)
-        dialogue(' Much time and distance will pass before', 490, 250, 15)
-        dialogue(' the next phase of your mission.        ', 490, 300, 15)
+        dialogue(' Nice work in the asteroid field!       ', 490, 100, 15)
+        dialogue(' Are you ready to enter hybernation?    ', 490, 150, 15)
+        dialogue(' Much time and distance will pass before', 490, 200, 15)
+        dialogue(' the next phase of your mission.        ', 490, 250, 15)
 
         # Monkey
         dialogue(' (1) No ', 243, 600, 15)
@@ -51,7 +51,7 @@ def nice_work():
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
-                    dialogue(' (2) Yes ', 242, 625, 15, underline=True)
+                    dialogue(' (2) Yes ', 251, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices.say_yes()

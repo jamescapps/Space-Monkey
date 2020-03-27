@@ -7,10 +7,10 @@ from chapter2.Choices import pre_dream_choices_5
 def perceive_time():
     # Commander
     update_and_flip()
-    dialogue(' Only in the same way that you may perceive        ', 490, 150, 15)
-    dialogue(' time in a dream. And what really is existence?    ', 490, 200, 15)
-    dialogue(' Other than time in a dream.                       ', 490, 250, 15)
-    dialogue('                                                   ', 490, 300, 15)
+    dialogue(' Only in the same way that you may perceive        ', 520, 100, 15)
+    dialogue(' time in a dream. And what really is existence?    ', 520, 150, 15)
+    dialogue(' Other than time in a dream.                       ', 520, 200, 15)
+    dialogue('                                                   ', 520, 250, 15)
 
     while True:
         # Monkey
@@ -25,7 +25,7 @@ def perceive_time():
             if event.key == pygame.K_1:
                 while True:
                     update_and_flip()
-                    dialogue(' (1) Are you saying there is no meaning?      ', 243, 600, 15, underline=True)
+                    dialogue(' (1) Are you saying there is no meaning?      ', 248, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices_5.no_meaning()
@@ -33,7 +33,7 @@ def perceive_time():
             if event.key == pygame.K_2:
                 while True:
                     update_and_flip()
-                    dialogue(' (2) Then what is death?                      ', 243, 625, 15, underline=True)
+                    dialogue(' (2) Then what is death?                      ', 248, 625, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     pre_dream_choices_5.what_is_death()
@@ -41,7 +41,7 @@ def perceive_time():
             if event.key == pygame.K_3:
                 while True:
                     update_and_flip()
-                    dialogue(' (3) Well let\'s get to it!                   ', 243, 650, 15, underline=True)
+                    dialogue(' (3) Well let\'s get to it!                   ', 248, 650, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
@@ -64,7 +64,7 @@ def long_term_effects():
         if event.key == pygame.K_1:
             while True:
                 update_and_flip()
-                dialogue(' (1) Lie                                           ', 243, 600, 15, underline=True)
+                dialogue(' (1) Lie                                           ', 248, 600, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 pre_dream_choices_5.lie()
@@ -72,7 +72,7 @@ def long_term_effects():
         if event.key == pygame.K_2:
             while True:
                 update_and_flip()
-                dialogue(' (2) Tell the truth                                ', 243, 625, 15, underline=True)
+                dialogue(' (2) Tell the truth                                ', 248, 625, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 pre_dream_choices_5.truth()
@@ -116,7 +116,7 @@ def miss_me():
         if event.key == pygame.K_1:
             while True:
                 update_and_flip()
-                dialogue(' (1) In a professional manner.                     ', 243, 600, 15, underline=True)
+                dialogue(' (1) In a professional manner.                     ', 495, 150, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 pre_dream_choices_5.professional()
@@ -124,7 +124,7 @@ def miss_me():
         if event.key == pygame.K_2:
             while True:
                 update_and_flip()
-                dialogue(' (2) In a personal manner.                         ', 243, 625, 15, underline=True)
+                dialogue(' (2) In a personal manner.                         ', 495, 200, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 # Run next function
