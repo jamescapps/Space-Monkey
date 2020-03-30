@@ -1,5 +1,6 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue
+from chapter2.levels import level_one
 
 pygame.init()
 
@@ -32,7 +33,7 @@ def dream():
             screen.fill(black)
             update_and_flip()
             dialogue(' T h e  D r e a m               ', 500, 100, 20)
-            dialogue(' Use left and right to move.    ', 500, 250, 20)
+            dialogue(' Use left and right to move.    ', 400, 250, 20)
             dialogue('      (enter)                   ', 500, 500, 20)
             event = pygame.event.wait()
             if event.type == pygame.KEYDOWN:
@@ -118,6 +119,8 @@ def dream():
             screen.blit(animation_object, (x, y))
             pygame.display.flip()
             update_and_flip()
+
+        level_one.game()
 
     dream_intro()
 
