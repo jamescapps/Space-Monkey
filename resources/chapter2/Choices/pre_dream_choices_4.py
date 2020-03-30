@@ -105,10 +105,10 @@ def afraid_to_die():
 def miss_me():
     # Commander
     update_and_flip()
-    dialogue(' (1) In a professional manner.                     ', 490, 150, 15)
-    dialogue(' (2) In a personal manner.                         ', 490, 200, 15)
-    dialogue('                                                   ', 490, 250, 15)
-    dialogue('                                                   ', 490, 300, 15)
+    dialogue(' (1) In a professional manner.                     ', 520, 100, 15)
+    dialogue(' (2) In a personal manner.                         ', 520, 150, 15)
+    dialogue('                                                   ', 520, 200, 15)
+    dialogue('                                                   ', 520, 250, 15)
 
     # Underline selection before running next function.
     event = pygame.event.wait()
@@ -116,7 +116,7 @@ def miss_me():
         if event.key == pygame.K_1:
             while True:
                 update_and_flip()
-                dialogue(' (1) In a professional manner.                     ', 495, 150, 15, underline=True)
+                dialogue(' (1) In a professional manner.                     ', 525, 100, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 pre_dream_choices_5.professional()
@@ -124,7 +124,7 @@ def miss_me():
         if event.key == pygame.K_2:
             while True:
                 update_and_flip()
-                dialogue(' (2) In a personal manner.                         ', 495, 200, 15, underline=True)
+                dialogue(' (2) In a personal manner.                         ', 525, 150, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 # Run next function

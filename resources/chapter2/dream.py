@@ -22,7 +22,8 @@ dream5 = pygame.image.load('img/dream/dream5.jpeg')
 dream6 = pygame.image.load('img/dream/dream6.jpeg')
 dream7 = pygame.image.load('img/dream/dream7.jpeg')
 dream1_background = pygame.image.load('img/dream/img1_background_animate.jpeg')
-animation_object = pygame.image.load('img/dream/animation_one.jpg')
+dream2_background = pygame.image.load('img/dream/dream8.jpg')
+animation_object = pygame.transform.rotate(pygame.image.load('img/working_star.png').convert(), 20)
 
 
 def dream():
@@ -31,6 +32,7 @@ def dream():
             screen.fill(black)
             update_and_flip()
             dialogue(' T h e  D r e a m               ', 500, 100, 20)
+            dialogue(' Use left and right to move.    ', 500, 250, 20)
             dialogue('      (enter)                   ', 500, 500, 20)
             event = pygame.event.wait()
             if event.type == pygame.KEYDOWN:
@@ -85,13 +87,13 @@ def dream():
         update_and_flip()
         screen.fill(black)
 
-        x = 300
+        x = 0
         y = 500
-        while y > 0:
+        while x < 700 and y < 700:
             update_and_flip()
             screen.blit(dream1_background, [0, 0])
-            x += 0
-            y -= .5
+            x += .75
+            y -= .75
             screen.blit(animation_object, (x, y))
             pygame.display.flip()
             update_and_flip()
@@ -105,6 +107,17 @@ def dream():
         update_and_flip()
         dialogue(' W h o  i s  a n y o n e ?              ', 500, 200, 20)
         pygame.time.delay(3500)
+
+        x = 0
+        y = 500
+        while x < 700 and y < 700:
+            update_and_flip()
+            screen.blit(dream2_background, [0, 0])
+            x += .75
+            y -= .75
+            screen.blit(animation_object, (x, y))
+            pygame.display.flip()
+            update_and_flip()
 
     dream_intro()
 

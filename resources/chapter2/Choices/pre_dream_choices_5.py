@@ -84,9 +84,9 @@ def professional():
     # Commander
     update_and_flip()
     dialogue(' Space monkey you are an admirable soldier.        ', 520, 100, 15)
-    dialogue(' I respect you in a professional way.              ', 520, 250, 15)
-    dialogue(' Now get to it!                                    ', 520, 300, 15)
-    dialogue('                                                   ', 520, 350, 15)
+    dialogue(' I respect you in a professional way.              ', 520, 150, 15)
+    dialogue(' Now get to it!                                    ', 520, 200, 15)
+    dialogue('                                                   ', 520, 250, 15)
 
     pygame.time.delay(3000)
     # Run function to enter dream
