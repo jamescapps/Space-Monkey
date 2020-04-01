@@ -1,7 +1,7 @@
 import intro
 from chapter1 import pre_asteroid
 from chapter2 import pre_dream, dream
-from chapter2.levels import level_one, level_two
+from chapter2.levels import level_one, level_two, level_three
 
 
 def main():
@@ -24,5 +24,6 @@ def main():
     #level_one.game()
     #level_one.scene_4()
     #level_two.scene_1()
+    #level_three.main()
 
 main()

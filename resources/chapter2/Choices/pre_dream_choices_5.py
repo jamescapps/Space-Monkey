@@ -60,7 +60,7 @@ def lie():
     dialogue(' Now get to it!                                    ', 520, 200, 15)
     dialogue('                                                   ', 520, 250, 15)
 
-    pygame.time.delay(3000)
+    pygame.time.delay(6000)
     # Run function to enter dream
     # Need a better transition into dream...
     dream.dream()
@@ -74,7 +74,7 @@ def truth():
     dialogue(' and you are healthy so you should be fine.        ', 520, 200, 15)
     dialogue(' Now get to it!                                    ', 520, 250, 15)
 
-    pygame.time.delay(3000)
+    pygame.time.delay(6000)
     # Run function to enter dream
     # Need a better transition into dream...
     dream.dream()
@@ -88,7 +88,7 @@ def professional():
     dialogue(' Now get to it!                                    ', 520, 200, 15)
     dialogue('                                                   ', 520, 250, 15)
 
-    pygame.time.delay(3000)
+    pygame.time.delay(6000)
     # Run function to enter dream
     # Need a better transition into dream...
     dream.dream()
@@ -102,7 +102,7 @@ def personal():
     dialogue(' Now get to it!                                    ', 520, 200, 15)
     dialogue('                                                   ', 520, 250, 15)
 
-    pygame.time.delay(3000)
+    pygame.time.delay(6000)
     # Run function to enter dream
     # Need a better transition into dream...
     dream.dream()
