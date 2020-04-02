@@ -1,5 +1,6 @@
 import pygame
 from resuable_functions import update_and_flip, dialogue
+from chapter2.levels import level_four
 
 
 pygame.init()
@@ -96,5 +97,5 @@ def main():
     update_and_flip()
     dialogue(' W h e n  i s  a n y o n e ?              ', 500, 200, 20)
     pygame.time.delay(3500)
-
     # Run function to start next level
+    level_four.game()

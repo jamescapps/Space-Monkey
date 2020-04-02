@@ -33,7 +33,7 @@ def dream():
             screen.fill(black)
             update_and_flip()
             dialogue(' T h e  D r e a m               ', 500, 100, 20)
-            dialogue(' Use left and right to move.    ', 400, 250, 20)
+            dialogue(' Use left and right to move.    ', 420, 250, 20)
             dialogue('      (enter)                   ', 500, 500, 20)
             event = pygame.event.wait()
             if event.type == pygame.KEYDOWN:
