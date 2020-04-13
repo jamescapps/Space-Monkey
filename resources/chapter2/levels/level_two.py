@@ -1,6 +1,6 @@
 import turtle
 import time
-from chapter2.levels import level_one
+from chapter2.levels import level_one, level_three
 
 
 stop = False
@@ -116,6 +116,8 @@ def scene_1():
                 if answer.lower() in ('mr. jones', 'the wolf', 'the girl', 'the deer', 'the moon'):
                     print('Yes')
                     # Proceed to next section
+                    # opened in new window?
+                    level_three.main()
                 else:
                     # Return to beginning
                     global stop

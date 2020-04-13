@@ -81,17 +81,17 @@ def long_term_effects():
 def afraid_to_die():
     # Commander
     update_and_flip()
-    dialogue(' Why would I be afraid of the most natural thing   ', 490, 150, 15)
-    dialogue(' this world has to offer?                          ', 490, 200, 15)
-    dialogue('                                                   ', 490, 250, 15)
-    dialogue('                                                   ', 490, 300, 15)
+    dialogue(' Why would I be afraid of the most natural thing   ', 520, 100, 15)
+    dialogue(' this world has to offer?                          ', 520, 150, 15)
+    dialogue('                                                   ', 520, 200, 15)
+    dialogue('                                                   ', 520, 250, 15)
 
     pygame.time.delay(5000)
 
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' That\'s beautiful commander.                 ', 243, 600, 15)
+        dialogue(' I am ready.                                  ', 243, 600, 15)
         dialogue(' Let\'s get to it!                            ', 243, 625, 15)
         dialogue('                                              ', 243, 650, 15)
 
