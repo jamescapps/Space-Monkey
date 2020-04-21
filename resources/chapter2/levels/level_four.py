@@ -354,7 +354,7 @@ def game():
 
                     answer = wn.textinput('So tell me', 'When are you?: ')
 
-                    if answer.lower() in ('now', 'then', 'never', 'again', 'time'):
+                    if answer.lower() in ('now', 'then', 'never', 'again', 'time', 'always'):
                         print('Yes')
                         # Proceed to next section
                         # opened in new window?

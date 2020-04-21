@@ -1,7 +1,7 @@
 import pygame
 import turtle
 import time
-from resuable_functions import update_and_flip
+from resuable_functions import update_and_flip, dialogue
 from chapter1 import pre_asteroid
 
 
@@ -402,6 +402,7 @@ def question_four():
 
     def move_right():
         global stop
+        # Stop is not resetting from previous function
         if not stop:
             x = player.xcor()
             x += player_speed
@@ -454,3 +455,15 @@ def question_four():
 
 def ending():
     print('The end')
+    while True:
+        screen.fill(black)
+        update_and_flip()
+        dialogue(' T h e  E n d               ', 500, 100, 20)
+        dialogue(' Thank you for playing!     ', 440, 250, 20)
+        dialogue('   By James Capps           ', 440, 250, 20)
+        dialogue('      (enter)               ', 500, 500, 20)
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                pygame.display.quit()
+                pygame.qut()
