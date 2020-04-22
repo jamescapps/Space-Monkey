@@ -92,8 +92,6 @@ def questions():
             x += player_speed
             player.setx(x)
 
-            print(x)
-
             x = board.xcor()
             x += board_speed
             board.setx(x)
@@ -130,11 +128,12 @@ def questions():
                     print('Yes')
                     # Proceed to next section
                     # opened in new window?
+                    global stop
+                    stop = False
                     question_two()
 
                 else:
                     # Return to beginning
-                    global stop
                     stop = False
                     questions()
 
@@ -197,219 +196,6 @@ def question_two():
             x += player_speed
             player.setx(x)
 
-            print(x)
-
-            x = board.xcor()
-            x += board_speed
-            board.setx(x)
-
-        if player.xcor() == 2.5:
-            stop = True
-
-    # Key binding
-    wn.listen()
-    wn.onkeypress(move_left, 'Left')
-    wn.onkeypress(move_right, 'Right')
-
-    # Main loop
-    while True:
-        player.showturtle()
-
-        if player.xcor() == 2.5:
-            while True:
-                floating_words_pen.clear()
-                floating_words_string = 'S t o p'
-                floating_words_pen.write(floating_words_string, False, align='left',
-                                         font=('Monospace', 20, 'normal'))
-
-                time.sleep(5)
-                floating_words_pen.clear()
-                floating_words_pen.setposition(10, 300)
-                floating_words_string = 'W h a t  i s  a b o v e  u p ?'
-                floating_words_pen.write(floating_words_string, False, align='center',
-                                         font=('Monospace', 20, 'normal'))
-
-                answer = wn.textinput('So tell me', 'What is above up?: ')
-
-                if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'down', 'center'):
-                    print('Yes')
-                    # Proceed to next section
-                    # opened in new window?
-                    question_three()
-
-                else:
-                    # Return to beginning
-                    global stop
-                    stop = False
-                    questions()
-
-
-def question_three():
-    # Set up the screen
-    wn = turtle.Screen()
-    wn.reset()
-    wn.bgcolor('black')
-    wn.title('T h e  D r e a m')
-    wn.bgpic('img/dream/zeb.gif')
-
-    # Register the image
-    wn.register_shape('img/dream/level_one_monkey.gif')
-    wn.register_shape('img/dream/surfboard.gif')
-
-    # Create the player
-    player = turtle.Turtle()
-    player.shape('img/dream/level_one_monkey.gif')
-    player.penup()
-    player.speed(0)
-    player.setposition(-400, -250)
-    player.setheading(90)
-    player_speed = 2.5
-
-    # Create the surf board
-    board = turtle.Turtle()
-    board.shape('img/dream/surfboard.gif')
-    board.penup()
-    board.speed(0)
-    board.setposition(-400, -320)
-    board.setheading(90)
-    board_speed = 2.5
-
-    # Floating words
-    floating_words_pen = turtle.Turtle()
-    floating_words_pen.speed(0)
-    floating_words_pen.color('white')
-    floating_words_pen.penup()
-    floating_words_pen.setposition(-50, 300)
-
-    floating_words_string = ''
-    floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
-    floating_words_pen.hideturtle()
-
-    # Functions
-    def move_left():
-        x = player.xcor()
-        x -= player_speed
-        player.setx(x)
-
-        x = board.xcor()
-        x -= board_speed
-        board.setx(x)
-
-    def move_right():
-        global stop
-        if not stop:
-            x = player.xcor()
-            x += player_speed
-            player.setx(x)
-
-            print(x)
-
-            x = board.xcor()
-            x += board_speed
-            board.setx(x)
-
-        if player.xcor() == 2.5:
-            stop = True
-
-    # Key binding
-    wn.listen()
-    wn.onkeypress(move_left, 'Left')
-    wn.onkeypress(move_right, 'Right')
-
-    # Main loop
-    while True:
-        player.showturtle()
-
-        if player.xcor() == 2.5:
-            while True:
-                floating_words_pen.clear()
-                floating_words_string = 'S t o p'
-                floating_words_pen.write(floating_words_string, False, align='left',
-                                         font=('Monospace', 20, 'normal'))
-
-                time.sleep(5)
-                floating_words_pen.clear()
-                floating_words_pen.setposition(10, 300)
-                floating_words_string = 'W h a t  i s  a b o v e  u p ?'
-                floating_words_pen.write(floating_words_string, False, align='center',
-                                         font=('Monospace', 20, 'normal'))
-
-                answer = wn.textinput('So tell me', 'What is above up?: ')
-
-                if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'down', 'center'):
-                    print('Yes')
-                    # Proceed to next section
-                    # opened in new window?
-                    question_four()
-
-                else:
-                    # Return to beginning
-                    global stop
-                    stop = False
-                    questions()
-
-
-def question_four():
-    # Set up the screen
-    wn = turtle.Screen()
-    wn.reset()
-    wn.bgcolor('black')
-    wn.title('T h e  D r e a m')
-    wn.bgpic('img/dream/zeb.gif')
-
-    # Register the image
-    wn.register_shape('img/dream/level_one_monkey.gif')
-    wn.register_shape('img/dream/surfboard.gif')
-
-    # Create the player
-    player = turtle.Turtle()
-    player.shape('img/dream/level_one_monkey.gif')
-    player.penup()
-    player.speed(0)
-    player.setposition(-400, -250)
-    player.setheading(90)
-    player_speed = 2.5
-
-    # Create the surf board
-    board = turtle.Turtle()
-    board.shape('img/dream/surfboard.gif')
-    board.penup()
-    board.speed(0)
-    board.setposition(-400, -320)
-    board.setheading(90)
-    board_speed = 2.5
-
-    # Floating words
-    floating_words_pen = turtle.Turtle()
-    floating_words_pen.speed(0)
-    floating_words_pen.color('white')
-    floating_words_pen.penup()
-    floating_words_pen.setposition(-50, 300)
-
-    floating_words_string = ''
-    floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
-    floating_words_pen.hideturtle()
-
-    # Functions
-    def move_left():
-        x = player.xcor()
-        x -= player_speed
-        player.setx(x)
-
-        x = board.xcor()
-        x -= board_speed
-        board.setx(x)
-
-    def move_right():
-        global stop
-        # Stop is not resetting from previous function
-        if not stop:
-            x = player.xcor()
-            x += player_speed
-            player.setx(x)
-
-            print(x)
-
             x = board.xcor()
             x += board_speed
             board.setx(x)
@@ -441,7 +227,8 @@ def question_four():
                 floating_words_pen.write(floating_words_string, False, align='center',
                                          font=('Monospace', 20, 'normal'))
 
-                answer = wn.textinput('So tell me', 'What is above up?: ')
+                time.sleep(5)
+                answer = wn.textinput('If you see the buddha on the road', 'What must you do?: ')
 
                 if answer.lower() in ('kill', 'kill the buddha.', 'kill the buddha', 'kill him', 'kill him.'):
                     print('Yes')
@@ -458,12 +245,12 @@ def ending():
     while True:
         screen.fill(black)
         update_and_flip()
-        dialogue(' T h e  E n d               ', 500, 100, 20)
-        dialogue(' Thank you for playing!     ', 440, 250, 20)
-        dialogue('   By James Capps           ', 440, 250, 20)
-        dialogue('      (enter)               ', 500, 500, 20)
+        dialogue('    T h e  E n d            ', 475, 100, 20)
+        dialogue('Thank you for playing!      ', 475, 250, 20)
+        dialogue('   By James Capps           ', 475, 350, 20)
+        dialogue('      (enter)               ', 475, 500, 20)
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 pygame.display.quit()
-                pygame.qut()
+                pygame.quit()
