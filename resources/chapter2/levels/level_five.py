@@ -124,7 +124,7 @@ def questions():
 
                 answer = wn.textinput('So tell me', 'What is above up?: ')
 
-                if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'down', 'center'):
+                if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'down', 'center', 'beyond'):
                     print('Yes')
                     # Proceed to next section
                     # opened in new window?
@@ -245,10 +245,10 @@ def ending():
     while True:
         screen.fill(black)
         update_and_flip()
-        dialogue('    T h e  E n d            ', 475, 100, 20)
-        dialogue('Thank you for playing!      ', 475, 250, 20)
-        dialogue('   By James Capps           ', 475, 350, 20)
-        dialogue('      (enter)               ', 475, 500, 20)
+        dialogue('    T h e  E n d            ', 475, 100, 30)
+        dialogue('Thank you for playing!      ', 445, 250, 20)
+        dialogue('By James Capps              ', 460, 350, 15)
+        dialogue('(enter to exit)             ', 475, 500, 20)
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:

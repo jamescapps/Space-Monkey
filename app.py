@@ -26,7 +26,7 @@ def main():
     #level_two.scene_1()
     #level_three.main()
     #level_four.game()
-    level_five.ending()
+    #level_five.ending()
 
 
 main()
