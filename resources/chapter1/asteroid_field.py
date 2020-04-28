@@ -402,7 +402,6 @@ def game(can_use_weapon):
         winner_pen.write(winner_string, False, align='left', font=('Monospace', 20, 'normal'))
         winner_pen.hideturtle()
         time.sleep(5)
-        wn.exitonclick()
         wn.bye()
         winner()
 

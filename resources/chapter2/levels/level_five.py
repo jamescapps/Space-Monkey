@@ -221,7 +221,7 @@ def question_two():
 
                 time.sleep(5)
                 floating_words_pen.clear()
-                floating_words_pen.setposition(10, 300)
+                floating_words_pen.setposition(20, 300)
                 floating_words_string = 'I f  y o u  s e e  t h e\nB u d d h a  o n  t h e  r o a d\nW h a t  m u s t ' \
                                         ' y o u  d o ? '
                 floating_words_pen.write(floating_words_string, False, align='center',
