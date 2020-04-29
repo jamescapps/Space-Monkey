@@ -162,7 +162,7 @@ def not_miss_you():
         dialogue(' Commander I will not miss you. I have      ', 243, 600, 15)
         dialogue(' tolerated you as a manor of professionalism', 243, 625, 15)
         dialogue(' and I feel no emotion at the thought of    ', 243, 650, 15)
-        dialogue(' never seeing your face again.    (enter)   ', 243, 700, 15)
+        dialogue(' never seeing your face again.    (enter)   ', 243, 675, 15)
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
@@ -172,6 +172,9 @@ def not_miss_you():
                     # Commander
                     update_and_flip()
                     dialogue(' Uh.. Great good luck out there.         ', 490, 150, 15)
+                    dialogue('                                         ', 490, 200, 15)
+                    dialogue('                                         ', 490, 250, 15)
+                    dialogue('                                         ', 490, 300, 15)
 
                     pygame.time.delay(3000)
                     # Run function to enter dream

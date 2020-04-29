@@ -246,6 +246,8 @@ def ending():
         screen.fill(black)
         update_and_flip()
         dialogue('    T h e  E n d            ', 475, 100, 30)
+        dialogue('Unfortunately, life support ', 445, 125, 15)
+        dialogue('failed during hibernation...', 445, 150, 15)
         dialogue('Thank you for playing!      ', 445, 250, 20)
         dialogue('By James Capps              ', 460, 350, 15)
         dialogue('(enter to exit)             ', 475, 500, 20)
