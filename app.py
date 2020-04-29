@@ -13,9 +13,9 @@ def main():
     intro.flying_through_space_2()
 
     # Chapter 1- The Asteroid Field
-    #pre_asteroid.commander_convo()
-    #pre_asteroid.monkey_convo()
-    #pre_asteroid.monkey_and_commander_convo()
+    pre_asteroid.commander_convo()
+    pre_asteroid.monkey_convo()
+    pre_asteroid.monkey_and_commander_convo()
     # Asteroid field game is ran within these functions based on outcome of conversations.
 
     # Chapter 2- The Dream
