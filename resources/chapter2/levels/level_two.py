@@ -65,8 +65,6 @@ def scene_1():
             x += player_speed
             player.setx(x)
 
-            print(x)
-
             x = board.xcor()
             x += board_speed
             board.setx(x)
@@ -114,9 +112,7 @@ def scene_1():
                 answer = wn.textinput('So tell me', 'Who are you?: ')
 
                 if answer.lower() in ('mr. jones', 'the wolf', 'the girl', 'the deer', 'the moon'):
-                    print('Yes')
                     # Proceed to next section
-                    # opened in new window?
                     level_three.main()
                 else:
                     # Return to beginning

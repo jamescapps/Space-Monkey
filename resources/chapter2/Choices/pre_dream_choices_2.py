@@ -82,7 +82,7 @@ def something_mean():
         # Monkey
         update_and_flip()
         dialogue(' (1) I have never liked you.                  ', 243, 600, 15)
-        dialogue(' (2) I will not miss you...                    ', 243, 625, 15)
+        dialogue(' (2) I will not miss you...                   ', 243, 625, 15)
 
         # Underline selection before running next function.
         event = pygame.event.wait()

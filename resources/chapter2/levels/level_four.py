@@ -301,8 +301,6 @@ def game():
                 x += player_speed
                 player.setx(x)
 
-                print(x)
-
                 x = board.xcor()
                 x += board_speed
                 board.setx(x)
