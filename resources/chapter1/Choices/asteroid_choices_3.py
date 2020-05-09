@@ -1,8 +1,8 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue, good_luck
-from asteroid_choices_4 import convinced, trash_response, war_profiteer, liar, responsible, one_time_thing, \
+from resources.resuable_functions import update_and_flip, dialogue, good_luck
+from resources.chapter1.Choices.asteroid_choices_4 import convinced, trash_response, war_profiteer, liar, responsible, one_time_thing, \
                                dont_try_again
-from asteroid_field import instructions
+from resources.chapter1.asteroid_field import instructions
 
 
 def explain_logically():

@@ -1,7 +1,7 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue
-from asteroid_choices_5 import i_understand, strong_feelings
-from asteroid_field import instructions
+from resources.resuable_functions import update_and_flip, dialogue
+from resources.chapter1.Choices.asteroid_choices_5 import i_understand, strong_feelings
+from resources.chapter1.asteroid_field import instructions
 
 
 def convinced():

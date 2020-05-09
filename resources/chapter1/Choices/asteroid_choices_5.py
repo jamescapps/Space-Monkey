@@ -1,6 +1,6 @@
 import pygame
-from resuable_functions import dialogue, update_and_flip
-from asteroid_field import instructions
+from resources.resuable_functions import dialogue, update_and_flip
+from resources.chapter1.asteroid_field import instructions
 
 
 def i_understand():

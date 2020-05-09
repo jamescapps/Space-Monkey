@@ -1,6 +1,6 @@
 import turtle
 import time
-from chapter2.levels import level_one, level_three
+from resources.chapter2.levels import level_one, level_three
 
 
 stop = False

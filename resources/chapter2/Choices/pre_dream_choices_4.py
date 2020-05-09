@@ -1,7 +1,7 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue, good_luck
-from chapter2 import dream
-from chapter2.Choices import pre_dream_choices_5
+from resources.resuable_functions import update_and_flip, dialogue, good_luck
+from resources.chapter2 import dream
+from resources.chapter2.Choices import pre_dream_choices_5
 
 
 def perceive_time():

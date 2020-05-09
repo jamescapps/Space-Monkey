@@ -1,8 +1,8 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue
-from asteroid_choices_2 import good_luck, whats_the_problem, nonsense, bananas, the_party
-from pre_asteroid import monkey_and_commander_convo
-from asteroid_field import instructions
+from resources.resuable_functions import update_and_flip, dialogue
+from resources.chapter1.Choices.asteroid_choices_2 import good_luck, whats_the_problem, nonsense, bananas, the_party
+import resources.chapter1.pre_asteroid
+from resources.chapter1.asteroid_field import instructions
 
 
 # Used to determine which section to go back to when arriving on the same dialogue from different places.

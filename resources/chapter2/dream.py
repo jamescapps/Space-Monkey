@@ -1,6 +1,6 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue
-from chapter2.levels import level_one
+from resources.resuable_functions import update_and_flip, dialogue
+from resources.chapter2.levels import level_one
 
 pygame.init()
 

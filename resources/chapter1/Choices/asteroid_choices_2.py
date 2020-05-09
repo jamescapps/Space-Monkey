@@ -1,7 +1,7 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue, good_luck
-from asteroid_choices_3 import explain_logically, insult, press_him, talk_about_it
-from asteroid_field import instructions
+from resources. resuable_functions import update_and_flip, dialogue, good_luck
+from resources.chapter1.Choices.asteroid_choices_3 import explain_logically, insult, press_him, talk_about_it
+from resources.chapter1.asteroid_field import instructions
 
 
 def whats_the_problem():

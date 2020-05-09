@@ -1,7 +1,7 @@
 import pygame
-from resuable_functions import dialogue, update_and_flip
-from intro import stars
-from Choices import asteroid_choices
+from resources.resuable_functions import dialogue, update_and_flip
+from resources.intro import stars
+from resources.chapter1.Choices import asteroid_choices
 
 
 size = (800, 800)

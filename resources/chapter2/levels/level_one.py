@@ -1,5 +1,5 @@
 import turtle
-from chapter2.levels import level_two
+from resources.chapter2.levels import level_two
 
 
 def game():

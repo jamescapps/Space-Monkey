@@ -1,8 +1,8 @@
 import pygame
 import turtle
 import time
-from resuable_functions import update_and_flip, dialogue
-from chapter1 import pre_asteroid
+from resources.resuable_functions import update_and_flip, dialogue
+from resources.chapter1 import pre_asteroid
 
 
 stop = False
@@ -246,9 +246,8 @@ def ending():
         screen.fill(black)
         update_and_flip()
         dialogue('    T h e  E n d            ', 475, 100, 30)
-        dialogue('Unfortunately, life support ', 435, 150, 15)
-        
-        dialogue('failed during hibernation...', 435, 200, 15)
+        dialogue('Unfortunately, life support ', 415, 150, 15)        
+        dialogue('failed during hibernation...', 415, 200, 15)
         dialogue('Thank you for playing!      ', 445, 250, 20)
         dialogue('By James Capps              ', 460, 350, 15)
         dialogue('(enter to exit)             ', 475, 500, 20)

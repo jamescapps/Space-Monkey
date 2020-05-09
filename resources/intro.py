@@ -1,5 +1,5 @@
 import pygame
-from resuable_functions import update_and_flip
+from resources.resuable_functions import update_and_flip
 
 pygame.init()
 

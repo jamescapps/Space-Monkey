@@ -1,8 +1,7 @@
 import pygame
-from intro import flying_through_space_1, stars
-from pre_asteroid import commander_convo, monkey_convo
-from resuable_functions import dialogue, update_and_flip
-from chapter2.Choices import pre_dream_choices
+from resources.intro import flying_through_space_1, stars
+from resources.resuable_functions import dialogue, update_and_flip
+from resources.chapter2.Choices import pre_dream_choices
 
 
 # Setup
@@ -59,7 +58,32 @@ def nice_work():
 
 def main():
     #flying_through_space_1()
-    commander_convo()
-    monkey_convo()
+    while True:
+        screen.fill(black)
+        screen.blit(commander, [290, 200])
+        update_and_flip()
+
+        dialogue(' Space Monkey! Are you there?  Do you read me?... ', 420, 500, 20)
+        dialogue('                    (Enter)                       ', 420, 525, 12)
+
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                screen.fill(black)
+                break
+    while True:
+        update_and_flip()
+        screen.blit(comms_photo, [300, 200])
+        update_and_flip()
+
+        dialogue(' Loud and clear Commander! ', 420, 500, 20)
+        dialogue('          (enter)          ', 420, 525, 12)
+
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                screen.fill(black)
+                break
+
     nice_work()
     # Next group is from within nice_work().

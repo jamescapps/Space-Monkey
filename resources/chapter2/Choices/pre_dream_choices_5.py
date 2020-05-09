@@ -1,6 +1,6 @@
 import pygame
-from resuable_functions import update_and_flip, dialogue, good_luck
-from chapter2 import dream
+from resources.resuable_functions import update_and_flip, dialogue, good_luck
+from resources.chapter2 import dream
 
 
 def no_meaning():

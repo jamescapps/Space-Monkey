@@ -2,11 +2,12 @@ import turtle
 import math
 import random
 import pygame
-from resuable_functions import dialogue, update_and_flip
-from intro import title_screen
-from chapter1 import pre_asteroid
-from chapter2 import pre_dream
 import time
+
+from resources.resuable_functions import dialogue, update_and_flip
+from resources.intro import title_screen
+from resources.chapter1 import pre_asteroid
+from resources.chapter2 import pre_dream
 
 
 # When distance is zero stage is cleared.
