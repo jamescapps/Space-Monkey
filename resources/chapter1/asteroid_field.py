@@ -432,6 +432,7 @@ def winner():
     size = (800, 800)
     screen = pygame.display.set_mode(size)
     black = (0, 0, 0)
+#    turtle.done()
     pygame.init()
     while True:
         screen.fill(black)
@@ -445,5 +446,6 @@ def winner():
             if event.key == pygame.K_RETURN:
                 # Run next chapter...
                 pre_dream.main()
+                turtle.mainloop()
 
 

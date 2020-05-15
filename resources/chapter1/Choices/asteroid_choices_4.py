@@ -8,7 +8,7 @@ def convinced():
     # Commander
     dialogue('  You know... that\'s not a bad point....                 '
              , 510, 100, 15)
-    dialogue('  Ok Space Monkey... You have permission to ignore the    '
+    dialogue('   Ok Space Monkey... You have permission to ignore the    '
              , 510, 150, 15)
     dialogue('  the Prime Directive.  Weapons free!                     '
              , 520, 200, 15)
