@@ -6,11 +6,11 @@ from resources.chapter2.levels import level_one, level_two, level_three, level_f
 
 def main():
     # Title Screen and Intro
-    #intro.title_screen()
-    #intro.shooting_star()
-    #intro.rocket_launch()
-    #intro.flying_through_space_1()
-    #intro.flying_through_space_2()
+    intro.title_screen()
+    intro.shooting_star()
+    intro.rocket_launch()
+    intro.flying_through_space_1()
+    intro.flying_through_space_2()
 
     # Chapter 1- The Asteroid Field
     pre_asteroid.commander_convo()
