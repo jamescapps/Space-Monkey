@@ -31,7 +31,7 @@ def insult():
         dialogue(' (1) You are a piece of trash!                          ', 246, 600, 15)
         dialogue(' (2) You are a war profiteer!                           ', 246, 625, 15)
         dialogue(' (3) Forget it...                                       ', 246, 650, 15)
-
+        dialogue('                                                        ', 246, 675, 15)
         # Underline selection before running next function.
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:

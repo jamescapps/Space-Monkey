@@ -16,7 +16,8 @@ def main():
     pre_asteroid.commander_convo()
     pre_asteroid.monkey_convo()
     pre_asteroid.monkey_and_commander_convo()
-    # Asteroid field game is ran within these functions based on outcome of conversations.
+    # The rest of the game is ran within these functions based on outcome of conversations.
+    # To skip to a section you can uncomment it below.
 
     # Chapter 2- The Dream
     #pre_dream.main()
@@ -26,7 +27,6 @@ def main():
     #level_two.scene_1()
     #level_three.main()
     #level_four.game()
-    #level_five.ending()
-
+    #level_five.ending()taaaaaaaaa
 
 main()

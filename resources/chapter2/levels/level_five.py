@@ -240,7 +240,6 @@ def question_two():
 def ending():
     print('The end')
     while True:
-        screen.fill(black)
         update_and_flip()
         dialogue('    T h e  E n d            ', 475, 100, 30)
         dialogue('Unfortunately, life support ', 415, 150, 15)        

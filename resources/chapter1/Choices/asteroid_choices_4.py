@@ -6,13 +6,13 @@ from resources.chapter1.asteroid_field import instructions
 
 def convinced():
     # Commander
-    dialogue('  You know... that\'s not a bad point....                 '
+    dialogue('    You know... that\'s not a bad point....                '
              , 510, 100, 15)
-    dialogue('   Ok Space Monkey... You have permission to ignore the    '
+    dialogue('    Space Monkey... You have permission to                 '
              , 510, 150, 15)
-    dialogue('  the Prime Directive.  Weapons free!                     '
+    dialogue('   ignore the Prime Directive.  Weapons free!              '
              , 520, 200, 15)
-    dialogue('  Now get in that asteroid field!                          '
+    dialogue('   Now get in that asteroid field!                         '
              , 520, 250, 15)
     pygame.time.delay(1500)
     pygame.time.delay(3000)
@@ -38,6 +38,7 @@ def trash_response():
                  , 250, 725, 15)
         pygame.time.delay(1500)
 
+        pygame.event.clear()
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
@@ -52,37 +53,15 @@ def trash_response():
                          , 520, 175, 15)
                 dialogue('  job. Never forget that I am in control and you are      '
                          , 520, 200, 15)
-                dialogue(' expendable                 (enter)                       '
+                dialogue(' expendable!                 (enter)                      '
                          , 530, 225, 15)
-                pygame.time.delay(1500)
-
+       
                 pygame.event.clear()
                 event = pygame.event.wait()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        # Commander
-                        dialogue('  Now get in that asteroid field and adhere to the prime  '
-                                 , 520, 100, 15)
-                        dialogue('  directive.           (enter)                            '
-                                 , 520, 125, 15)
-                        dialogue('                                                          '
-                                 , 520, 150, 15)
-                        dialogue('                                                          '
-                                 , 520, 175, 15)
-                        dialogue('                                                          '
-                                 , 520, 200, 15)
-                        dialogue('                                                          '
-                                 , 530, 225, 15)
-                        pygame.time.delay(1500)
-
-                        pygame.event.clear()
-                        event = pygame.event.wait()
-                        if event.type == pygame.KEYDOWN:
-                            if event.key == pygame.K_RETURN:
-                                pygame.time.delay(3000)
-                                # Run function to enter asteroid field without weapons.
-                                instructions(False)
-
+                        # Run function to enter asteroid field without weapons.
+                        instructions(False)
 
 def war_profiteer():
     # Have to start new loop to get rid of underline.
@@ -125,8 +104,7 @@ def war_profiteer():
                 event = pygame.event.wait()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        pygame.time.delay(3000)
-                        # Run function to enter asteroid field with weapons.
+                       # Run function to enter asteroid field with weapons.
                         instructions(True)
 
 

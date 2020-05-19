@@ -41,17 +41,17 @@ def strong_feelings():
     while True:
         # Commander
         update_and_flip()
-        dialogue('     Space Monkey...                                    '
+        dialogue('   Space Monkey...                                      '
                  , 520, 100, 15)
-        dialogue('       You\'re confidence and aloofness only make me want    '
-                 , 510, 125, 15)
-        dialogue('   you all the more....                                '
+        dialogue('   You\'re confidence and aloofness only                '
+                 , 520, 125, 15)
+        dialogue('  make me want  you all the more....                    '
                  , 530, 150, 15)
-        dialogue('  Why don\'t you go ahead and use your weapons....    '
+        dialogue('  Why don\'t you go ahead and use your weapons....      '                                          
                  , 530, 175, 15)
-        dialogue('  And don\'t worry about me.  The mission is more     '
+        dialogue('  And don\'t worry about me.  The mission is more       '
                  , 530, 200, 15)
-        dialogue('   important than my heart.   (enter)                   '
+        dialogue('  important than my heart.   (enter)                    '
                  , 530, 225, 15)
         pygame.time.delay(1500)
 

@@ -14,7 +14,7 @@ def say_no_1():
     back_counter = 1
     # Commander
     update_and_flip()
-    dialogue(' The Prime Directive states that you are not allowed'
+    dialogue('The Prime Directive states that you are not allowed'
              , 510, 100, 15)
     dialogue('to shoot an asteroid. The resulting debris may have'
              , 510, 150, 15)
