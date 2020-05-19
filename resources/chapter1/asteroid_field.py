@@ -403,7 +403,7 @@ def game(can_use_weapon):
         winner_pen.write(winner_string, False, align='left', font=('Monospace', 20, 'normal'))
         winner_pen.hideturtle()
         time.sleep(5)
-        wn.bye()
+        wn.clear()
         winner()
 
     if shields == 0:
@@ -432,7 +432,6 @@ def winner():
     size = (800, 800)
     screen = pygame.display.set_mode(size)
     black = (0, 0, 0)
-#    turtle.done()
     pygame.init()
     while True:
         screen.fill(black)

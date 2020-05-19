@@ -93,9 +93,9 @@ def pleasure():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' Sir, it has been an absolute pleasure   ', 243, 600, 15)
-        dialogue(' to serve under you. I wish you all      ', 243, 625, 15)
-        dialogue(' the best.                               ', 243, 650, 15)
+        dialogue(' Sir, it has been an absolute pleasure           ', 235, 600, 15)
+        dialogue(' to serve under you. I wish you all              ', 235, 625, 15)
+        dialogue(' the best.                                       ', 235, 650, 15)
 
         # Maybe add something meaningful from the Commander.
         pygame.time.delay(3000)
