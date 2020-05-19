@@ -76,6 +76,7 @@ def game():
             player.showturtle()
 
             if player.xcor() > 515:
+                wn.clear()
                 scene_2()
 
     def scene_2():
@@ -158,6 +159,7 @@ def game():
                 floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
 
             if player.xcor() > 515:
+                wn.clear()
                 scene_3()
 
     def scene_3():
@@ -240,6 +242,7 @@ def game():
                 floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
 
             if player.xcor() > 515:
+                wn.clear()
                 second_round()
 
     def second_round():
@@ -353,9 +356,7 @@ def game():
                     answer = wn.textinput('So tell me', 'When are you?: ')
 
                     if answer.lower() in ('now', 'then', 'never', 'again', 'time', 'always'):
-                        print('Yes')
-                        # Proceed to next section
-                        # opened in new window?
+                        wn.clear()
                         level_five.main()
 
                     else:

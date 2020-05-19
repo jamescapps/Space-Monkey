@@ -125,11 +125,9 @@ def questions():
                 answer = wn.textinput('So tell me', 'What is above up?: ')
 
                 if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'down', 'center', 'beyond'):
-                    print('Yes')
-                    # Proceed to next section
-                    # opened in new window?
                     global stop
                     stop = False
+                    wn.clear()
                     question_two()
 
                 else:
@@ -231,9 +229,8 @@ def question_two():
                 answer = wn.textinput('If you see the buddha on the road', 'What must you do?: ')
 
                 if answer.lower() in ('kill', 'kill the buddha.', 'kill the buddha', 'kill him', 'kill him.'):
-                    print('Yes')
-                    # Proceed to next section
                     ending()
+                    wn.clear()
 
                 else:
                     # Restart game
@@ -247,7 +244,7 @@ def ending():
         update_and_flip()
         dialogue('    T h e  E n d            ', 475, 100, 30)
         dialogue('Unfortunately, life support ', 415, 150, 15)        
-        dialogue('failed during hibernation...', 415, 200, 15)
+        dialogue('failed during hibernation...', 413, 200, 15)
         dialogue('Thank you for playing!      ', 445, 250, 20)
         dialogue('By James Capps              ', 460, 350, 15)
         dialogue('(enter to exit)             ', 475, 500, 20)

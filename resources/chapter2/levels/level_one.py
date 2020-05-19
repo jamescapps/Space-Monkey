@@ -142,6 +142,7 @@ def game():
         player.showturtle()
 
         if player.xcor() > 515:
+            wn.clear()
             scene_2()
 
 
@@ -204,6 +205,7 @@ def scene_2():
         player.showturtle()
 
         if player.xcor() > 515:
+            wn.clear()
             scene_3()
 
 
@@ -266,6 +268,7 @@ def scene_3():
         player.showturtle()
 
         if player.xcor() > 515:
+            wn.clear()
             scene_4()
 
 
@@ -350,6 +353,7 @@ def scene_4():
             floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
 
         if player.xcor() > 515:
+            wn.clear()
             scene_5()
 
 
@@ -433,4 +437,5 @@ def scene_5():
             floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
 
         if player.xcor() > 515:
+            wn.clear()
             level_two.scene_1()

@@ -113,6 +113,7 @@ def scene_1():
 
                 if answer.lower() in ('mr. jones', 'the wolf', 'the girl', 'the deer', 'the moon'):
                     # Proceed to next section
+                    wn.clear()
                     level_three.main()
                 else:
                     # Return to beginning
