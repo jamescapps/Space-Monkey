@@ -8,15 +8,15 @@ stop = False
 def game():
     def scene_1():
         # Set up the screen
-        wn = turtle.Screen()
-        wn.reset()
-        wn.bgcolor('black')
-        wn.title('T h e  D r e a m')
-        wn.bgpic('img/dream/dream11.gif')
+        new_win = turtle.Screen()
+        new_win.reset()
+        new_win.bgcolor('black')
+        new_win.title('T h e  D r e a m')
+        new_win.bgpic('img/dream/dream11.gif')
 
         # Register the image
-        wn.register_shape('img/dream/level_one_monkey.gif')
-        wn.register_shape('img/dream/surfboard.gif')
+        new_win.register_shape('img/dream/level_one_monkey.gif')
+        new_win.register_shape('img/dream/surfboard.gif')
 
         # Create the player
         player = turtle.Turtle()
@@ -67,29 +67,29 @@ def game():
             board.setx(x)
 
         # Key binding
-        wn.listen()
-        wn.onkeypress(move_left, 'Left')
-        wn.onkeypress(move_right, 'Right')
+        new_win.listen()
+        new_win.onkeypress(move_left, 'Left')
+        new_win.onkeypress(move_right, 'Right')
 
         # Main loop
         while True:
             player.showturtle()
 
             if player.xcor() > 515:
-                wn.clear()
+                new_win.clear()
                 scene_2()
 
     def scene_2():
         # Set up the screen
-        wn = turtle.Screen()
-        wn.reset()
-        wn.bgcolor('black')
-        wn.title('T h e  D r e a m')
-        wn.bgpic('img/dream/dream9.gif')
+        new_win = turtle.Screen()
+        new_win.reset()
+        new_win.bgcolor('black')
+        new_win.title('T h e  D r e a m')
+        new_win.bgpic('img/dream/dream9.gif')
 
         # Register the image
-        wn.register_shape('img/dream/level_one_monkey.gif')
-        wn.register_shape('img/dream/surfboard.gif')
+        new_win.register_shape('img/dream/level_one_monkey.gif')
+        new_win.register_shape('img/dream/surfboard.gif')
 
         # Create the player
         player = turtle.Turtle()
@@ -140,9 +140,9 @@ def game():
             board.setx(x)
 
         # Key binding
-        wn.listen()
-        wn.onkeypress(move_left, 'Left')
-        wn.onkeypress(move_right, 'Right')
+        new_win.listen()
+        new_win.onkeypress(move_left, 'Left')
+        new_win.onkeypress(move_right, 'Right')
 
         # Main loop
         while True:
@@ -159,20 +159,20 @@ def game():
                 floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
 
             if player.xcor() > 515:
-                wn.clear()
+                new_win.clear()
                 scene_3()
 
     def scene_3():
         # Set up the screen
-        wn = turtle.Screen()
-        wn.reset()
-        wn.bgcolor('black')
-        wn.title('T h e  D r e a m')
-        wn.bgpic('img/dream/dream10.gif')
+        new_win = turtle.Screen()
+        new_win.reset()
+        new_win.bgcolor('black')
+        new_win.title('T h e  D r e a m')
+        new_win.bgpic('img/dream/dream10.gif')
 
         # Register the image
-        wn.register_shape('img/dream/level_one_monkey.gif')
-        wn.register_shape('img/dream/surfboard.gif')
+        new_win.register_shape('img/dream/level_one_monkey.gif')
+        new_win.register_shape('img/dream/surfboard.gif')
 
         # Create the player
         player = turtle.Turtle()
@@ -223,9 +223,9 @@ def game():
             board.setx(x)
 
         # Key binding
-        wn.listen()
-        wn.onkeypress(move_left, 'Left')
-        wn.onkeypress(move_right, 'Right')
+        new_win.listen()
+        new_win.onkeypress(move_left, 'Left')
+        new_win.onkeypress(move_right, 'Right')
 
         # Main loop
         while True:
@@ -242,21 +242,21 @@ def game():
                 floating_words_pen.write(floating_words_string, False, align='left', font=('Monospace', 20, 'normal'))
 
             if player.xcor() > 515:
-                wn.clear()
+                new_win.clear()
                 second_round()
 
     def second_round():
 
         # Set up the screen
-        wn = turtle.Screen()
-        wn.reset()
-        wn.bgcolor('black')
-        wn.title('T h e  D r e a m')
-        wn.bgpic('img/dream/zeb.gif')
+        new_win = turtle.Screen()
+        new_win.reset()
+        new_win.bgcolor('black')
+        new_win.title('T h e  D r e a m')
+        new_win.bgpic('img/dream/zeb.gif')
 
         # Register the image
-        wn.register_shape('img/dream/level_one_monkey.gif')
-        wn.register_shape('img/dream/surfboard.gif')
+        new_win.register_shape('img/dream/level_one_monkey.gif')
+        new_win.register_shape('img/dream/surfboard.gif')
 
         # Create the player
         player = turtle.Turtle()
@@ -312,9 +312,9 @@ def game():
                 stop = True
 
         # Key binding
-        wn.listen()
-        wn.onkeypress(move_left, 'Left')
-        wn.onkeypress(move_right, 'Right')
+        new_win.listen()
+        new_win.onkeypress(move_left, 'Left')
+        new_win.onkeypress(move_right, 'Right')
 
         # Main loop
         while True:
@@ -353,10 +353,10 @@ def game():
                     floating_words_pen.write(floating_words_string, False, align='center',
                                              font=('Monospace', 20, 'normal'))
 
-                    answer = wn.textinput('So tell me', 'When are you?: ')
+                    answer = new_win.textinput('So tell me', 'When are you?: ')
 
                     if answer.lower() in ('now', 'then', 'never', 'again', 'time', 'always'):
-                        wn.clear()
+                        new_win.clear()
                         level_five.main()
 
                     else:

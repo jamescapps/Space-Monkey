@@ -45,8 +45,6 @@ def perceive_time():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
-                    # Run function to enter dream
-                    # Need a better transition into dream...
                     dream.dream()
 
 
@@ -97,8 +95,6 @@ def afraid_to_die():
 
         pygame.time.delay(1500)
         good_luck()
-        # Run function to enter dream
-        # Need a better transition into dream...
         dream.dream()
 
 
@@ -128,4 +124,4 @@ def miss_me():
                 pygame.display.flip()
                 pygame.time.delay(1500)
                 # Run next function
-                # personal()
+                pre_dream_choices_5.personal()

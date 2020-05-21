@@ -36,15 +36,15 @@ def main():
 
 def questions():
     # Set up the screen
-    wn = turtle.Screen()
-    wn.reset()
-    wn.bgcolor('black')
-    wn.title('T h e  D r e a m')
-    wn.bgpic('img/dream/zeb.gif')
+    new_win = turtle.Screen()
+    new_win.reset()
+    new_win.bgcolor('black')
+    new_win.title('T h e  D r e a m')
+    new_win.bgpic('img/dream/zeb.gif')
 
     # Register the image
-    wn.register_shape('img/dream/level_one_monkey.gif')
-    wn.register_shape('img/dream/surfboard.gif')
+    new_win.register_shape('img/dream/level_one_monkey.gif')
+    new_win.register_shape('img/dream/surfboard.gif')
 
     # Create the player
     player = turtle.Turtle()
@@ -100,9 +100,9 @@ def questions():
             stop = True
 
     # Key binding
-    wn.listen()
-    wn.onkeypress(move_left, 'Left')
-    wn.onkeypress(move_right, 'Right')
+    new_win.listen()
+    new_win.onkeypress(move_left, 'Left')
+    new_win.onkeypress(move_right, 'Right')
 
     # Main loop
     while True:
@@ -122,12 +122,12 @@ def questions():
                 floating_words_pen.write(floating_words_string, False, align='center',
                                          font=('Monospace', 20, 'normal'))
 
-                answer = wn.textinput('So tell me', 'What is above up?: ')
+                answer = new_win.textinput('So tell me', 'What is above up?: ')
 
-                if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'down', 'center', 'beyond'):
+                if answer.lower() in ('above', 'below', 'around', 'between', 'among', 'up', 'donew_win', 'center', 'beyond'):
                     global stop
                     stop = False
-                    wn.clear()
+                    new_win.clear()
                     question_two()
 
                 else:
@@ -138,15 +138,15 @@ def questions():
 
 def question_two():
     # Set up the screen
-    wn = turtle.Screen()
-    wn.reset()
-    wn.bgcolor('black')
-    wn.title('T h e  D r e a m')
-    wn.bgpic('img/dream/zeb.gif')
+    new_win = turtle.Screen()
+    new_win.reset()
+    new_win.bgcolor('black')
+    new_win.title('T h e  D r e a m')
+    new_win.bgpic('img/dream/zeb.gif')
 
     # Register the image
-    wn.register_shape('img/dream/level_one_monkey.gif')
-    wn.register_shape('img/dream/surfboard.gif')
+    new_win.register_shape('img/dream/level_one_monkey.gif')
+    new_win.register_shape('img/dream/surfboard.gif')
 
     # Create the player
     player = turtle.Turtle()
@@ -202,9 +202,9 @@ def question_two():
             stop = True
 
     # Key binding
-    wn.listen()
-    wn.onkeypress(move_left, 'Left')
-    wn.onkeypress(move_right, 'Right')
+    new_win.listen()
+    new_win.onkeypress(move_left, 'Left')
+    new_win.onkeypress(move_right, 'Right')
 
     # Main loop
     while True:
@@ -226,11 +226,11 @@ def question_two():
                                          font=('Monospace', 20, 'normal'))
 
                 time.sleep(5)
-                answer = wn.textinput('If you see the buddha on the road', 'What must you do?: ')
+                answer = new_win.textinput('If you see the buddha on the road', 'What must you do?: ')
 
                 if answer.lower() in ('kill', 'kill the buddha.', 'kill the buddha', 'kill him', 'kill him.'):
                     ending()
-                    wn.clear()
+                    new_win.clear()
 
                 else:
                     # Restart game
@@ -248,7 +248,7 @@ def ending():
         dialogue('By James Capps              ', 460, 350, 15)
         dialogue('(enter to exit)             ', 475, 500, 20)
         event = pygame.event.wait()
-        if event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYDOnew_win:
             if event.key == pygame.K_RETURN:
                 pygame.display.quit()
                 pygame.quit()

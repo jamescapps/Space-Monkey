@@ -30,6 +30,7 @@ def instructions(can_use_weapon):
         update_and_flip()
         dialogue(' T h e  A s t e r o i d  F i e l d                ', 500, 100, 20)
         dialogue(' Instructions                                     ', 635, 150, 20)
+        dialogue('  From now on there will be 2 windows. Make sure they are side by side.     ', 425, 200, 15)
         dialogue(' Use the arrow keys (up, down, left, right) to move your ship.', 370, 250, 15)
         dialogue('  Use the space bar to fire your weapon. (If you convinced the Commander...)', 425, 300, 15)
         dialogue('   -But beware, shooting asteroids may cause debris... ', 425, 325, 15)

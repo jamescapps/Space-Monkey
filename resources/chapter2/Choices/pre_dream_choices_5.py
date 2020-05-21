@@ -47,8 +47,6 @@ def what_is_death():
 
                 pygame.time.delay(1500)
                 good_luck()
-                # Run function to enter dream
-                # Need a better transition into dream...
                 dream.dream()
 
 
@@ -61,8 +59,6 @@ def lie():
     dialogue('                                                   ', 520, 250, 15)
 
     pygame.time.delay(6000)
-    # Run function to enter dream
-    # Need a better transition into dream...
     dream.dream()
 
 
@@ -75,8 +71,6 @@ def truth():
     dialogue(' Now get to it!                                    ', 520, 250, 15)
 
     pygame.time.delay(6000)
-    # Run function to enter dream
-    # Need a better transition into dream...
     dream.dream()
 
 
@@ -89,8 +83,6 @@ def professional():
     dialogue('                                                   ', 520, 250, 15)
 
     pygame.time.delay(6000)
-    # Run function to enter dream
-    # Need a better transition into dream...
     dream.dream()
 
 
@@ -103,6 +95,4 @@ def personal():
     dialogue('                                                   ', 520, 250, 15)
 
     pygame.time.delay(6000)
-    # Run function to enter dream
-    # Need a better transition into dream...
     dream.dream()

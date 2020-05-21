@@ -45,8 +45,6 @@ def hybernation_explanation():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
-                    # Run function to enter dream
-                    # Need a better transition into dream...
                     dream.dream()
 
 
@@ -84,8 +82,6 @@ def get_personal():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
-                    # Run function to enter dream
-                    # Need a better transition into dream...
                     dream.dream()
 
 
@@ -100,8 +96,6 @@ def pleasure():
         # Maybe add something meaningful from the Commander.
         pygame.time.delay(3000)
         good_luck()
-        # Run function to enter dream
-        # Need a better transition into dream...
         dream.dream()
 
 
@@ -109,21 +103,22 @@ def miss_you():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' Sir...                                  ', 243, 600, 15)
-        dialogue(' I am... going to ...                    ', 243, 625, 15)
-        dialogue(' miss you..                              ', 243, 650, 15)
+        dialogue('        Sir...                                  ', 243, 600, 15)
+        dialogue('        I am... going to ...                    ', 243, 625, 15)
+        dialogue('        miss you..                              ', 243, 650, 15)
 
         while True:
             # Commander
             update_and_flip()
-            dialogue(' I appreciate that Space Monkey.         ', 490, 150, 15)
-            dialogue(' The feeling is mutual.                  ', 490, 200, 15)
-            dialogue(' Now get out there and complete your     ', 490, 250, 15)
-            dialogue(' mission!                                ', 490, 300, 15)
+            dialogue('              I appreciate that Space Monkey.              ', 490, 100, 15)
+            dialogue('                                                           ', 490, 125, 15)
+            dialogue('              The feeling is mutual.                       ', 490, 150, 15)
+            dialogue('                                                           ', 520, 175, 15)
+            dialogue('        Now get out there and complete your                ', 540, 200, 15)
+            dialogue('                                                           ', 550, 225, 15)
+            dialogue('          mission!                                         ', 520, 250, 15)
 
             pygame.time.delay(3000)
-            # Run function to enter dream
-            # Need a better transition into dream...
             dream.dream()
 
 
@@ -131,11 +126,11 @@ def never_liked_you():
     while True:
         # Monkey
         update_and_flip()
-        dialogue(' Commander I would just like to say that   ', 243, 600, 15)
-        dialogue(' I have never liked you. You are a war     ', 243, 625, 15)
-        dialogue(' pig who profits on the carnage of regime  ', 243, 650, 15)
-        dialogue(' changes throughout this galaxy. I wish you', 243, 700, 15)
-        dialogue(' a slow, painful death...       (enter)    ', 243, 750, 15)
+        dialogue('     Commander I would just like to say that   ', 240, 600, 15)
+        dialogue('     I have never liked you. You are a war     ', 240, 625, 15)
+        dialogue('     pig who profits on the carnage of regime  ', 240, 650, 15)
+        dialogue('     changes throughout this galaxy. I wish you', 240, 675, 15)
+        dialogue('     a slow, painful death...       (enter)    ', 240, 700, 15)
 
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
@@ -144,14 +139,15 @@ def never_liked_you():
                 while True:
                     # Commander
                     update_and_flip()
-                    dialogue(' Well I am on Earth living out my days   ', 490, 150, 15)
-                    dialogue(' while you are in a capusle, asleep for  ', 490, 200, 15)
-                    dialogue(' the next 750 years...  So good luck on  ', 490, 250, 15)
-                    dialogue(' your mission!                           ', 490, 300, 15)
+                    dialogue('         Well I am on Earth living out my days        ', 500, 100, 15)
+                    dialogue('                                                      ', 500, 125, 15)
+                    dialogue('         while you are in a capusle, asleep for       ', 500, 150, 15)
+                    dialogue('                                                      ', 500, 175, 15)
+                    dialogue('         the next 750 years...  So good luck on       ', 500, 200, 15)
+                    dialogue('                                                      ', 500, 225, 15)
+                    dialogue('         your mission!                                ', 500, 250, 15)
 
                     pygame.time.delay(3000)
-                    # Run function to enter dream
-                    # Need a better transition into dream...
                     dream.dream()
 
 
@@ -171,12 +167,10 @@ def not_miss_you():
                 while True:
                     # Commander
                     update_and_flip()
-                    dialogue(' Uh.. Great good luck out there.         ', 490, 100, 15)
-                    dialogue('                                         ', 490, 150, 15)
-                    dialogue('                                         ', 490, 200, 15)
-                    dialogue('                                         ', 490, 250, 15)
+                    dialogue('      Uh.. Great good luck out there.                   ', 490, 100, 15)
+                    dialogue('                                                        ', 510, 150, 15)
+                    dialogue('                                                        ', 510, 200, 15)
+                    dialogue('                                                        ', 510, 250, 15)
 
                     pygame.time.delay(3000)
-                    # Run function to enter dream
-                    # Need a better transition into dream...
                     dream.dream()

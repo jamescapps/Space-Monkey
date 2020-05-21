@@ -9,15 +9,15 @@ stop = False
 def scene_1():
 
     # Set up the screen
-    wn = turtle.Screen()
-    wn.reset()
-    wn.bgcolor('black')
-    wn.title('T h e  D r e a m')
-    wn.bgpic('img/dream/zeb.gif')
+    new_wn = turtle.Screen()
+    new_wn.reset()
+    new_wn.bgcolor('black')
+    new_wn.title('T h e  D r e a m')
+    new_wn.bgpic('img/dream/zeb.gif')
 
     # Register the image
-    wn.register_shape('img/dream/level_one_monkey.gif')
-    wn.register_shape('img/dream/surfboard.gif')
+    new_wn.register_shape('img/dream/level_one_monkey.gif')
+    new_wn.register_shape('img/dream/surfboard.gif')
 
     # Create the player
     player = turtle.Turtle()
@@ -73,9 +73,9 @@ def scene_1():
             stop = True
 
     # Key binding
-    wn.listen()
-    wn.onkeypress(move_left, 'Left')
-    wn.onkeypress(move_right, 'Right')
+    new_wn.listen()
+    new_wn.onkeypress(move_left, 'Left')
+    new_wn.onkeypress(move_right, 'Right')
 
     # Main loop
     while True:
@@ -109,11 +109,11 @@ def scene_1():
                 floating_words_string = 'S o  t e l l  m e .'
                 floating_words_pen.write(floating_words_string, False, align='center', font=('Monospace', 20, 'normal'))
 
-                answer = wn.textinput('So tell me', 'Who are you?: ')
+                answer = new_wn.textinput('So tell me', 'Who are you?: ')
 
                 if answer.lower() in ('mr. jones', 'the wolf', 'the girl', 'the deer', 'the moon'):
                     # Proceed to next section
-                    wn.clear()
+                    new_wn.clear()
                     level_three.main()
                 else:
                     # Return to beginning

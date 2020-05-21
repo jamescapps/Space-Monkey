@@ -27,7 +27,6 @@ def say_no():
                     dialogue(' (1) I was just hoping we could chat. ', 248, 600, 15, underline=True)
                     pygame.display.flip()
                     pygame.time.delay(1500)
-                    # Run next function
                     pre_dream_choices_2.have_a_chat()
 
             if event.key == pygame.K_2:
@@ -37,7 +36,6 @@ def say_no():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
-                    # Run function to start the dream.
                     dream.dream()
 
 
