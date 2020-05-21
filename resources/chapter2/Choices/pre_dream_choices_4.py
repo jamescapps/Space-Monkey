@@ -123,5 +123,4 @@ def miss_me():
                 dialogue(' (2) In a personal manner.                         ', 525, 150, 15, underline=True)
                 pygame.display.flip()
                 pygame.time.delay(1500)
-                # Run next function
                 pre_dream_choices_5.personal()

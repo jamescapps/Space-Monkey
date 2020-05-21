@@ -229,26 +229,28 @@ def question_two():
                 answer = new_win.textinput('If you see the buddha on the road', 'What must you do?: ')
 
                 if answer.lower() in ('kill', 'kill the buddha.', 'kill the buddha', 'kill him', 'kill him.'):
+                    new_win.bye();
                     ending()
-                    new_win.clear()
 
                 else:
-                    # Restart game
-                    pre_asteroid.commander_convo()
+                    # Return to beginning
+                    global stop
+                    stop = False
+                    questions()
 
 
 def ending():
     print('The end')
     while True:
         update_and_flip()
-        dialogue('    T h e  E n d            ', 475, 100, 30)
-        dialogue('Unfortunately, life support ', 415, 150, 15)        
-        dialogue('failed during hibernation...', 413, 200, 15)
-        dialogue('Thank you for playing!      ', 445, 250, 20)
-        dialogue('By James Capps              ', 460, 350, 15)
-        dialogue('(enter to exit)             ', 475, 500, 20)
+        dialogue('    T h e  E n d            ', 475, 50, 30)
+        dialogue('Unfortunately, life support ', 415, 400, 15)        
+        dialogue('failed during hibernation...', 413, 450, 15)
+        dialogue('Thank you for playing!      ', 445, 550, 20)
+        dialogue('By James Capps              ', 460, 650, 15)
+        dialogue('(enter to exit)             ', 475, 750, 20)
         event = pygame.event.wait()
-        if event.type == pygame.KEYDOnew_win:
+        if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 pygame.display.quit()
                 pygame.quit()

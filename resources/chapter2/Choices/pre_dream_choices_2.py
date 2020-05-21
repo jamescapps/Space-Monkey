@@ -45,8 +45,6 @@ def have_a_chat():
                     pygame.display.flip()
                     pygame.time.delay(1500)
                     good_luck()
-                    # Run function to enter dream
-                    # Need a better transition into dream...
                     dream.dream()
 
 

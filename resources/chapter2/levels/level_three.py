@@ -27,10 +27,8 @@ dreamz6 = pygame.image.load('img/dream/dream18.png')
 dreamz7 = pygame.image.load('img/dream/dream19.png')
 dreamz8 = pygame.image.load('img/dream/dream20.png')
 
-# Flipping back and forth between windows....
 
 def main():
-    # Flashing monkey moon
     x = -200
     y = 0
     while x > -400:

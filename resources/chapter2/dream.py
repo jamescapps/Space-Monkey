@@ -33,11 +33,12 @@ def dream():
             screen.fill(black)
             update_and_flip()
             dialogue('      T h e  D r e a m               ', 440, 100, 20)
-            dialogue(' Sometimes there will be two windows.', 440, 200, 15)
+            dialogue(' There will be two windows.          ', 440, 200, 15)
             dialogue(' Make sure they are side by side.    ', 440, 250, 15)
             dialogue(' Use left and right to move.         ', 440, 300, 15)
             dialogue(' Answer the questions.               ', 440, 350, 15)
             dialogue('     (enter)                         ', 440, 500, 15)
+            
             event = pygame.event.wait()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:

@@ -58,13 +58,10 @@ def title_screen():
         screen.blit(title_text, title_text_rect)
         screen.blit(thumbs_up_monkey, [100, 100])
         screen.blit(command_text, command_text_rect)
-        # Would like to make blinking more consistent.
         screen.blit(side_small_rocket, (150, 700))
         screen.blit(side_small_rocket, (350, 700))
         screen.blit(side_small_rocket, (550, 700))
         pygame.display.update()
-        # screen.blit(replace_command_text, replace_command_text_rect)
-        # update_and_flip()
 
         # Hit enter to continue to next screen.
         event = pygame.event.wait()
@@ -101,8 +98,6 @@ def rocket_launch():
         exhaust_y -= .5
         screen.blit(rocket, (x, y))
         pygame.display.flip()
-        # screen.blit(exhaust, (exhaust_x, exhaust_y))
-        # Need better exhaust or smoke.
         update_and_flip()
         screen.fill(black)
 

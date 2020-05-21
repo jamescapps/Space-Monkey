@@ -57,7 +57,6 @@ def nice_work():
 
 
 def main():
-    #flying_through_space_1()
     while True:
         screen.fill(black)
         screen.blit(commander, [290, 200])
