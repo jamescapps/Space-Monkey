@@ -247,7 +247,10 @@ def ending():
         dialogue('Unfortunately, life support ', 415, 400, 15)        
         dialogue('failed during hibernation...', 413, 450, 15)
         dialogue('Thank you for playing!      ', 445, 550, 20)
+        dialogue('All images taken from open source collections.', 410, 600, 10)
+        dialogue('If you wish to have an image removed, please let me know.', 410, 625, 10)
         dialogue('By James Capps              ', 460, 650, 15)
+        dialogue('jamesjcapps.com             ', 430, 675, 10)
         dialogue('(enter to exit)             ', 475, 750, 20)
         event = pygame.event.wait()
         if event.type == pygame.KEYDOWN:
