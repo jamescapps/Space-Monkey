@@ -5,130 +5,55 @@ from resources.chapter1.Choices.asteroid_choices_4 import convinced, trash_respo
 from resources.chapter1.asteroid_field import instructions
 
 
+def display_dialogue_and_wait(options):
+    """
+    Displays dialogue options and waits for user input.
+    :param options: A list of tuples in the format (text, function_to_call, *args)
+    """
+    while True:
+        update_and_flip()
+
+        # Display options
+        for idx, (text, _) in enumerate(options):
+            dialogue(text, 246, 600 + (25 * idx), 15)
+
+        # Wait for input and call the corresponding function
+        event = pygame.event.wait()
+        if event.type == pygame.KEYDOWN:
+            for idx, (_, func, *args) in enumerate(options):
+                if event.key == pygame.K_1 + idx:
+                    # Underline selected option
+                    dialogue(options[idx][0], 246, 600 + (25 * idx), 15, underline=True)
+                    pygame.display.flip()
+                    pygame.time.delay(1500)
+                    func(*args)
+                    return  # Exit after a choice is made
+
 def explain_logically():
-    # Have to start new loop to get rid of underline.
-    while True:
-        # Monkey
-        update_and_flip()
-        dialogue(' Look sir, I understand you are my superior...         ', 246, 600, 15)
-        dialogue(' But the longer it takes me to get through this        ', 246, 625, 15)
-        dialogue(' asteroid field, the longer it takes me to complete    ', 246, 650, 15)
-        dialogue(' my mission....                                        ', 246, 675, 15)
-        dialogue('                    (enter)                            ', 246, 700, 12)
+    options = [
+        ("Look sir, I understand you are my superior...         ", convinced)
+    ]
+    display_dialogue_and_wait(options)
 
-        event = pygame.event.wait()
-        if event.type == pygame.KEYDOWN:
-            convinced()
-            if event.key == pygame.K_1:
-                convinced()
-
-                
 def insult():
-    # Have to start new loop to get rid of underline.
-    while True:
-        # Monkey
-        update_and_flip()
-        dialogue(' (1) You are a piece of trash!                          ', 246, 600, 15)
-        dialogue(' (2) You are a war profiteer!                           ', 246, 625, 15)
-        dialogue(' (3) Forget it...                                       ', 246, 650, 15)
-        dialogue('                                                        ', 246, 675, 15)
-        # Underline selection before running next function.
-        event = pygame.event.wait()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_1:
-                while True:
-                    update_and_flip()
-                    dialogue(' (1) You are a piece of trash!                          ', 246, 600, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    trash_response()
-
-            if event.key == pygame.K_2:
-                while True:
-                    update_and_flip()
-                    dialogue(' (2) You are a war profiteer!                           ', 246, 625, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    war_profiteer()
-
-            if event.key == pygame.K_3:
-                while True:
-                    update_and_flip()
-                    dialogue(' (3) Forget it...                                       ', 246, 650, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    good_luck()
-                    pygame.time.delay(3000)
-                    # Run function to enter asteroid field without weapon.
-                    instructions(False)
-
+    options = [
+        ("(1) You are a piece of trash!                          ", trash_response),
+        ("(2) You are a war profiteer!                           ", war_profiteer),
+        ("(3) Forget it...                                       ", good_luck, instructions, False)
+    ]
+    display_dialogue_and_wait(options)
 
 def press_him():
-    # Have to start new loop to get rid of underline.
-    while True:
-        # Monkey
-        update_and_flip()
-        dialogue(' (1) You are a liar!                                    ', 246, 600, 15)
-        dialogue(' (2) I want to know who is responsible and what we are  ', 246, 625, 15)
-        dialogue('     going to do about this!                            ', 246, 650, 15)
-        dialogue('                                                        ', 246, 700, 15)
-
-        # Underline selection before running next function.
-        event = pygame.event.wait()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_1:
-                while True:
-                    update_and_flip()
-                    dialogue(' (1) You are a liar!                                    ', 246, 600, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    liar()
-
-            if event.key == pygame.K_2:
-                while True:
-                    update_and_flip()
-                    dialogue(' (2) I want to know who is responsible and what we are  ',  246, 625, 15, underline=True)
-                    dialogue('     going to do about this!                            ', 246, 650, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    responsible()
-
+    options = [
+        ("(1) You are a liar!                                    ", liar),
+        ("(2) I want to know who is responsible and what we are  ", responsible)
+    ]
+    display_dialogue_and_wait(options)
 
 def talk_about_it():
-    # Have to start new loop to get rid of underline.
-    while True:
-        # Monkey
-        update_and_flip()
-        dialogue(' (1) Tell him it was a one time thing.                  ', 246, 600, 15)
-        dialogue(' (2) Tell him he better not try it again.               ', 246, 625, 15)
-        dialogue(' (3) Forget it...                                       ', 246, 650, 15)
-
-        # Underline selection before running next function.
-        event = pygame.event.wait()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_1:
-                while True:
-                    update_and_flip()
-                    dialogue(' (1) Tell him it was a one time thing.                  ', 246, 600, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    one_time_thing()
-
-            if event.key == pygame.K_2:
-                while True:
-                    update_and_flip()
-                    dialogue(' (2) Tell him he better not try it again.               ', 246, 625, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    dont_try_again()
-
-            if event.key == pygame.K_3:
-                while True:
-                    update_and_flip()
-                    dialogue(' (3) Forget it...                                       ', 246, 650, 15, underline=True)
-                    pygame.display.flip()
-                    pygame.time.delay(1500)
-                    good_luck()
-                    pygame.time.delay(3000)
-                    # Run function to enter asteroid field without weapons.
-                    instructions(False)
+    options = [
+        ("(1) Tell him it was a one time thing.                  ", one_time_thing),
+        ("(2) Tell him he better not try it again.               ", dont_try_again),
+        ("(3) Forget it...                                       ", good_luck, instructions, False)
+    ]
+    display_dialogue_and_wait(options)

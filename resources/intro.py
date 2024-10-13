@@ -13,139 +13,107 @@ screen = pygame.display.set_mode(size)
 pygame.display.set_caption('S p a c e  M o n k e y')
 
 # Register images
-thumbs_up_monkey = pygame.image.load('img/thumbs_up_monkey.png').convert()
-background_image = pygame.image.load('img/about_background.png').convert()
+images = {
+    'thumbs_up_monkey': pygame.image.load('img/thumbs_up_monkey.png').convert(),
+    'background': pygame.image.load('img/about_background.png').convert(),
+    'rocket': pygame.image.load('img/rocketship.png').convert(),
+    'small_rocket': pygame.image.load('img/small_rocket.png').convert(),
+    'exhaust': pygame.image.load('img/exhaust.png').convert(),
+    'star': pygame.transform.rotate(pygame.image.load('img/working_star.png').convert(), 20),
+    'stars': pygame.image.load('img/basic_star.png').convert(),
+    'blue_star': pygame.image.load('img/blue_star.png').convert(),
+    'planet': pygame.image.load('img/saturn.png').convert()
+}
 
-rocket = pygame.image.load('img/rocketship.png').convert()
-small_rocket = pygame.image.load('img/small_rocket.png').convert()
-side_small_rocket = pygame.transform.rotate(small_rocket, -90)
+# Rotated images
+images['side_small_rocket'] = pygame.transform.rotate(images['small_rocket'], -90)
+images['side_rocket'] = pygame.transform.rotate(images['rocket'], -90)
+images['side_exhaust'] = pygame.transform.rotate(images['exhaust'], -90)
 
-exhaust = pygame.image.load('img/exhaust.png').convert()
-side_rocket = pygame.transform.rotate(rocket, -90)
-side_exhaust = pygame.transform.rotate(exhaust, -90)
-
-star = pygame.transform.rotate(pygame.image.load('img/working_star.png').convert(), 20)
-stars = pygame.image.load('img/basic_star.png').convert()
-blue_star = pygame.image.load('img/blue_star.png').convert()
-planet = pygame.image.load('img/saturn.png').convert()
+# Utility Functions
+def draw_stars():
+    """Helper function to draw stars at predefined positions."""
+    star_positions = [(100, 100), (220, 520), (347, 750), (400, 120), (500, 600)]
+    for pos in star_positions:
+        screen.blit(images['stars'], pos)
 
 
-# Functions are named for each section
+def rocket_movement(x, y, rocket_image, exhaust_image, exhaust_x, exhaust_y, increment):
+    """Handles the movement of a rocket and its exhaust."""
+    screen.fill(black)
+    draw_stars()
+    screen.blit(images['planet'], (500, -10))  # Include planet in space scenes
+    x += increment
+    exhaust_x += increment
+    screen.blit(rocket_image, (x, y))
+    screen.blit(exhaust_image, (exhaust_x, exhaust_y))
+    update_and_flip()
+    screen.fill(black)
+
+
+# Functions for each section
 def title_screen():
-    x = 820
-    y = 150
+    x, y = 820, 150
 
     title_font = pygame.font.SysFont('monospace', 50)
     title_text = title_font.render('   S p a c e  M o n k e y   ', True, white, blue)
-    title_text_rect = title_text.get_rect()
-    title_text_rect.center = (x // 2, y // 2)
-
     command_font = pygame.font.SysFont('courier', 30)
     command_text = command_font.render('Press Enter To Start', True, white, blue)
-    command_text_rect = command_text.get_rect()
-    command_text_rect.center = (x // 2, y * 4)
 
-    replace_command_text = command_font.render('                       ', True, white, blue)
-    replace_command_text_rect = replace_command_text.get_rect()
-    replace_command_text_rect.center = (x // 2, y * 4)
+    title_text_rect = title_text.get_rect(center=(x // 2, y // 2))
+    command_text_rect = command_text.get_rect(center=(x // 2, y * 4))
 
     while True:
         screen.fill(blue)
-        screen.blit(blue_star, (1, 1))
-        screen.blit(blue_star, (1, 750))
-        screen.blit(blue_star, (750, 1))
-        screen.blit(blue_star, (750, 750))
+        corners = [(1, 1), (1, 750), (750, 1), (750, 750)]
+        for pos in corners:
+            screen.blit(images['blue_star'], pos)
+
         screen.blit(title_text, title_text_rect)
-        screen.blit(thumbs_up_monkey, [100, 100])
+        screen.blit(images['thumbs_up_monkey'], [100, 100])
         screen.blit(command_text, command_text_rect)
-        screen.blit(side_small_rocket, (150, 700))
-        screen.blit(side_small_rocket, (350, 700))
-        screen.blit(side_small_rocket, (550, 700))
+        screen.blit(images['side_small_rocket'], (150, 700))
+        screen.blit(images['side_small_rocket'], (350, 700))
+        screen.blit(images['side_small_rocket'], (550, 700))
         pygame.display.update()
 
         # Hit enter to continue to next screen.
         event = pygame.event.wait()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
-                break
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+            break
 
 
 def shooting_star():
-    x = 0
-    y = 500
+    x, y = 0, 500
 
-    while x < 700 and y < 700:
-        screen.blit(background_image, [0, 0])
+    while x < 700 and y > 0:
+        screen.blit(images['background'], [0, 0])
+        screen.blit(images['star'], (x, y))
         pygame.display.flip()
-        x += .75
-        y -= .75
-        screen.blit(star, (x, y))
+        x += 0.75
+        y -= 0.75
         update_and_flip()
         screen.fill(black)
 
 
 def rocket_launch():
-    x = 300
-    y = 500
-    exhaust_x = 355
-    exhaust_y = 745
+    x, y = 300, 500
+    exhaust_x, exhaust_y = 355, 745
 
     while y > 0:
-        screen.blit(background_image, [0, 0])
-        x += 0
-        y -= .5
-        exhaust_x += 0
-        exhaust_y -= .5
-        screen.blit(rocket, (x, y))
-        pygame.display.flip()
-        update_and_flip()
-        screen.fill(black)
+        screen.blit(images['background'], [0, 0])
+        rocket_movement(x, y, images['rocket'], images['exhaust'], exhaust_x, exhaust_y, 0)
+        y -= 0.5
+        exhaust_y -= 0.5
 
 
 def flying_through_space_1():
-    x = 0
-    y = 300
-    exhaust_x = -360
-    exhaust_y = 350
-
+    x, y, exhaust_x, exhaust_y = 0, 300, -360, 350
     while x < 700:
-        screen.fill(black)
-        screen.blit(stars, (100, 100))
-        screen.blit(stars, (220, 520))
-        screen.blit(stars, (347, 750))
-        screen.blit(stars, (400, 120))
-        screen.blit(stars, (500, 600))
-        x += .25
-        y -= 0
-        exhaust_x += .25
-        exhaust_y -= 0
-        screen.blit(side_rocket, (x, y))
-        pygame.display.flip()
-        screen.blit(side_exhaust, (exhaust_x, exhaust_y))
-        update_and_flip()
-        screen.fill(black)
+        rocket_movement(x, y, images['side_rocket'], images['side_exhaust'], exhaust_x, exhaust_y, 0.25)
 
 
 def flying_through_space_2():
-    x = 0
-    y = 300
-    exhaust_x = -360
-    exhaust_y = 350
-
+    x, y, exhaust_x, exhaust_y = 0, 300, -360, 350
     while x < 700:
-        screen.fill(black)
-        screen.blit(stars, (130, 110))
-        screen.blit(stars, (200, 540))
-        screen.blit(stars, (247, 650))
-        screen.blit(stars, (400, 120))
-        screen.blit(stars, (300, 600))
-        screen.blit(planet, (500, -10))
-        x += .25
-        y -= 0
-        exhaust_x += .25
-        exhaust_y -= 0
-        screen.blit(side_rocket, (x, y))
-        pygame.display.flip()
-        screen.blit(side_exhaust, (exhaust_x, exhaust_y))
-        update_and_flip()
-        screen.fill(black)
+        rocket_movement(x, y, images['side_rocket'], images['side_exhaust'], exhaust_x, exhaust_y, 0.25)
